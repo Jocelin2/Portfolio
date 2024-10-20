@@ -3,19 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio - Jocelin LAURET</title>
+    <link rel="stylesheet" href="static/css.css">
 </head>
 <body>
-<h1>Welcome to my portfolio</h1>
-    <ul>
-        <li><a href="about.php">About</a></li>
-        <li><a href="contact.php">Contact</a></li>
-    </ul>
-    <h2>Projects</h2>
-    <ul>
-        <li><a href="project.php">Project 1</a></li>
-        <li><a href="project.php">Project 2</a></li>
-        <li><a href="project.php">Project 3</a></li>
-    </ul>
+    <header>
+        <nav>
+            <h1>Portfolio</h1>
+            <ul>
+                <li><a href="#Profil">Profil</a></li>
+                <li><a href="#Projets">Projets</a></li>
+                <li><a href="#Sport">Sport</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>Jocelin LAURET</h1>
+    </header>
+
+    <main>
+        <!-- Profil Section -->
+        <section id="Profil">
+            <h2>Profil</h2>
+            <p>Bonjour, je m'appelle Jocelin LAURET. Je suis actuellement en deuxième année de BUT en Réseaux et Télécommunication parcours Cybersécurité à l'IUT de Reims-Châlons-Charleville sur le site de Châlons-en-Champagne</lons-en-Champagne></p>
+        </section>
+
+        <!-- Projets Section -->
+        <section id="Projets">
+            <h2>Projets</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Projet 1 : </h3>
+                    <p></p>
+                    <a href="#">Voir le projet</a>
+                </div>
+                <div class="project-card">
+                    <h3>Projet 2 : </h3>
+                    <p></p>
+                    <a href="#">Voir le projet</a>
+                </div>
+            </div>
+            <h3><a href="https://github.com/Jocelin2?tab=repositories">Github</a></h3>
+        </section>
+
+        <!-- Sport Section -->
+        <section id="Sport">
+            <h2>Sport</h2>
+            <p></p>
+        </section>
+    </main>
+
+    <!-- Contact Section -->
+    <footer>
+        <h2 id="Contact">Contact</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Votre nom" required>
+            <input type="email" placeholder="Votre email" required>
+            <textarea placeholder="Votre message" rows="4" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </footer>
 </body>
 </html>
