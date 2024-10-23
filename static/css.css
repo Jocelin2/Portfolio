@@ -16,6 +16,8 @@ nav {
     background-color: #333;
     padding: 1rem;
     text-align: center;
+    width: 100%;
+    position: fixed;
 }
 
 nav h1 {
@@ -74,6 +76,7 @@ footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 300px;
+    margin: 2%;
 }
 
 .contact-form input,
