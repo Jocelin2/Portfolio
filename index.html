@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Jocelin LAURET</title>
     <link rel="stylesheet" href="static/css.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-python.min.js"></script>
 </head>
 <body>
     <header>
@@ -36,14 +39,20 @@
                     <div class="projects-grid">
                         <div class="project-card">
                             <h3>Trame ICMP en Python : </h3>
-                            <p></p>
+                            <img src="static/img/python.png" alt="icon python">
+                            <br>
+                            <button id="toggleCodeBtn" onclick="Githubcode('Scolaire_icmp')">Afficher le code</button>
+                            <pre id="codeBlock" class="Scolaire_icmp">
+                                <code class="language-py"></code>
+                            </pre>
+                            <br>
                             <a href="https://github.com/Jocelin2/Projets/tree/main/Scolaire/Python">Voir le projet</a>
                         </div>
                     </div>
                     <div class="projects-grid">
                         <div class="project-card">
                             <h3>Robot humanoïde :</h3>
-                            <p></p>
+                            <img src="static/img/arduino.png" alt="icon arduino">
                             <a href="#">Voir le projet</a>
                         </div>
                     </div>
@@ -53,6 +62,7 @@
                     <div class="projects-grid">
                         <div class="project-card">
                             <h3>Strava API : </h3>
+                            <img src="static/img/strava.png" alt="icon strava">
                             <p></p>
                             <a href="">Voir le projet</a>
                         </div>
@@ -67,6 +77,7 @@
                 </div>
             </div>
             <h3><a href="https://github.com/Jocelin2?tab=repositories">Github</a></h3>
+            <button class="custom-btn"><a href="static/pdf/CV.pdf">CV</a></button>
         </section>
 
         <!-- Sport Section -->
@@ -79,12 +90,98 @@
     <!-- Contact Section -->
     <footer>
         <h2 id="Contact">Contact</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Votre nom" required>
-            <input type="email" placeholder="Votre email" required>
-            <textarea placeholder="Votre message" rows="4" required></textarea>
+        <div id="message-result" style="display: none;"></div>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Votre nom" required>
+            <input type="email" id="email" placeholder="Votre email" required>
+            <textarea id="message" placeholder="Votre message" rows="4" required></textarea>
             <button type="submit">Envoyer</button>
-        </form>
+        </form>      
     </footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+   // Initialisation d'EmailJS avec la clé publique
+   (function() {
+      emailjs.init("vCwDMPJLBtg6MrbGY"); // Assure-toi que c'est bien ta clé publique
+   })();
+</script>
+
+<script type="text/javascript">
+    // Assure-toi que le DOM est complètement chargé avant d'ajouter l'événement
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche le rechargement de la page lors de la soumission du formulaire
+
+            // Réinitialise l'affichage des messages
+            const resultDiv = document.getElementById('message-result');
+            resultDiv.style.display = 'none';
+            resultDiv.classList.remove('success', 'error');
+
+            // Envoie l'email avec EmailJS
+            emailjs.send("service_thfi504", "template_z0mh4i8", {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            }).then(function(response) {
+                // Message de succès
+                resultDiv.innerText = 'Message envoyé avec succès !';
+                resultDiv.classList.add('success');
+                resultDiv.style.display = 'block';
+            }, function(error) {
+                // Message d'erreur
+                resultDiv.innerText = 'Erreur lors de l\'envoi du message. Veuillez réessayer.';
+                resultDiv.classList.add('error');
+                resultDiv.style.display = 'block';
+                console.error('Erreur lors de l\'envoi:', error); // Log l'erreur dans la console
+            });
+        });
+    });
+    // Sélectionne les éléments du DOM
+    const toggleCodeBtn = document.getElementById('toggleCodeBtn');
+    const codeBlock = document.getElementById('codeBlock');
+
+    // Ajoute un événement de clic sur le bouton
+    function affiche(Block) {
+        // Vérifie si le bloc de code est actuellement visible
+        if (Block.style.display === 'none' || Block.style.display === '') {
+            // Si le code est masqué, on l'affiche
+            Block.style.display = 'block';
+            toggleCodeBtn.textContent = 'Masquer le code';
+        } else {
+            // Si le code est visible, on le masque
+            Block.style.display = 'none';
+            toggleCodeBtn.textContent = 'Afficher le code';
+        }
+    };
+    
+    function Githubcode(url) {
+        // Utilisation de Fetch API pour récupérer le contenu du fichier
+        var urls = new Map();
+        urls.set("Perso_strava", "https://raw.githubusercontent.com/Jocelin2/Projets/refs/heads/main/Personnel/download_activities.py");
+        urls.set("Scolaire_icmp", "https://raw.githubusercontent.com/Jocelin2/Projets/refs/heads/main/Scolaire/Python/ip_handling.py");
+    
+        fetch(urls.get(url))
+            .then(response => {
+            if (!response.ok) {
+                throw new Error('Erreur lors du chargement du fichier : ' + response.statusText);
+            }
+                return response.text();
+            })
+            .then(data => {
+                // Insérer le contenu du fichier dans le bloc de code
+                codeBlock.textContent = data;
+                // Ré-appliquer la coloration syntaxique avec Prism.js
+                Prism.highlightElement(codeBlock);
+                
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                codeBlock.textContent = 'Erreur lors du chargement du fichier.';
+            });		
+        affiche(codeBlock);
+    };
+</script>
+
 </html>
