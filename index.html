@@ -2,6 +2,9 @@
 <!-- https://codepen.io/hudsonmarinho/pen/kMxPRa -->
 <!-- https://codepen.io/eddyerburgh/pen/oxwXjx -->
 <!-- https://codepen.io/albizan/details/mMWdWZ -->
+ <!-- https://codepen.io/aybukeceylan/pen/yLaqqOL -->
+<!-- https://codepen.io/JavaScriptJunkie/details/WgRBxw -->
+<!-- https://codepen.io/DomdeDom/pen/rNLyaXr -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,6 +15,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-python.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+    </style>
 </head>
 <body>
     <nav>
@@ -37,58 +45,49 @@
                 <!-- Section Projets -->
                 <section id="Projets">
                     <h1 class="text">Projets :</h1>
-                    <div class="slider">
-                        <div class="slide active">
-                            <h2>Trame ICMP en Python :</h2>
-                            <img src="static/img/python.png" alt="Python Icon">
-                            <button id="toggleCodeBtn" onclick="Githubcode('Scolaire_icmp')">Afficher le code</button>                           
-                            <pre class="Scolaire_icmp"><code class="language-python"></code></pre>
-                            <a href="https://github.com/Jocelin2/Projets/tree/main/Scolaire/Python">Voir le projet</a>
+                    <div class="projets">
+                    <div class="blog-slider">
+                        <div class="blog-slider__wrp swiper-wrapper">
+                          <div class="blog-slider__item swiper-slide">
+                            <div class="blog-slider__content">
+                              <div class="blog-slider__img">
+                                <img src="static/img/python.svg" alt="">
+                              </div>   
+                              <span class="blog-slider__code">26 December 2019</span>
+                              <div class="blog-slider__title">Trame ICMP en Python</div>
+                              <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div>
+                              <a class="blog-slider__button" onclick="Githubcode('Scolaire_icmp')">AFFICHER LE CODE</a>
+                            </div>
+                          </div>
+                          <div class="blog-slider__item swiper-slide">
+                            <div class="blog-slider__content">
+                              <div class="blog-slider__img">
+                                <img src="static/img/arduino.svg" alt="">
+                              </div>
+                              <span class="blog-slider__code">26 December 2019</span>
+                              <div class="blog-slider__title">Projets Arduino</div>
+                              <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
+                              <a class="blog-slider__button">AFFICHER LE CODE</a>
+                            </div>
+                          </div>
+                          
+                          <div class="blog-slider__item swiper-slide">
+                            <div class="blog-slider__content">
+                              <div class="blog-slider__img">
+                                <img src="static/img/golang.svg" />
+                              </div>
+                              <span class="blog-slider__code">26 December 2019</span>
+                              <div class="blog-slider__title">Projet Go</div>
+                              <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
+                              <a class="blog-slider__button">AFFICHER LE CODE</a>
+                            </div>
+                          </div>
+                          
                         </div>
-                        <div class="slide">
-                            <h2>Robot humanoïde :</h2>
-                            <img src="static/img/arduino.png" alt="Arduino Icon">
-                            <a href="#">Voir le projet</a>
-                        </div>
-                        <div class="slide">
-                            <h2>Strava API :</h2>
-                            <img src="static/img/strava.png" alt="Strava Icon">
-                            <button id="toggleCodeBtn" onclick="Githubcode('Perso_strava')">Afficher le code</button>
-                            <pre class="Perso_strava"><code class="language-python"></code></pre>
-                            <a href="#">Voir le projet</a>
-                        </div>
+                        <div class="blog-slider__pagination"></div>
+                      </div>
+                      <pre class="Scolaire_icmp"><code class="language-python"></code></pre>
                     </div>
-                    <div class="news-slider__arrows">
-                        <button class="news-slider__arrow news-slider-prev" onclick="changeSlide(-1)">
-                          <span class="icon-font">
-                            <svg class="icon icon-arrow-left">
-                              <use xlink:href="#icon-arrow-left"></use>
-                            </svg>
-                          </span>
-                        </button>
-                        <button class="news-slider__arrow news-slider-next" onclick="changeSlide(-1)">
-                          <span class="icon-font">
-                            <svg class="icon icon-arrow-right">
-                              <use xlink:href="#icon-arrow-right"></use>
-                            </svg>
-                          </span>
-                        </button>
-                    </div>
-                    <svg aria-hidden="true" style="display: none;">
-                        <defs>
-                          <!-- Flèche Gauche -->
-                          <symbol id="icon-arrow-left" viewBox="0 0 32 32">
-                            <title>arrow-left</title>
-                            <path style="color: black;" d="M0.704 17.696l9.856 9.856c0.896 0.896 2.432 0.896 3.328 0s0.896-2.432 0-3.328l-5.792-5.856h21.568c1.312 0 2.368-1.056 2.368-2.368s-1.056-2.368-2.368-2.368h-21.568l5.824-5.824c0.896-0.896 0.896-2.432 0-3.328-0.48-0.48-1.088-0.704-1.696-0.704s-1.216 0.224-1.696 0.704l-9.824 9.824c-0.448 0.448-0.704 1.056-0.704 1.696s0.224 1.248 0.704 1.696z"></path>
-                          </symbol>
-                      
-                          <!-- Flèche Droite -->
-                          <symbol id="icon-arrow-right" viewBox="0 0 32 32">
-                            <title>arrow-right</title>
-                            <path style="color: black;" d="M31.296 14.336l-9.888-9.888c-0.896-0.896-2.432-0.896-3.328 0s-0.896 2.432 0 3.328l5.824 5.856h-21.536c-1.312 0-2.368 1.056-2.368 2.368s1.056 2.368 2.368 2.368h21.568l-5.856 5.824c-0.896 0.896-0.896 2.432 0 3.328 0.48 0.48 1.088 0.704 1.696 0.704s1.216-0.224 1.696-0.704l9.824-9.824c0.448-0.448 0.704-1.056 0.704-1.696s-0.224-1.248-0.704-1.664z"></path>
-                          </symbol>
-                        </defs>
-                    </svg>                                     
                     <h3><a href="https://github.com/Jocelin2?tab=repositories">Github</a></h3>
                     <button class="custom-btn"><a href="static/pdf/CV.pdf">CV</a></button>
                 </section>
@@ -106,7 +105,42 @@
                         régulièrement jusqu'à la Terminale en 2023. Cet engagement m'a permis de rejoindre le 
                         groupe France et de participer à des compétitions internationales.
                     </h3>
-                    <div class=""></div>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                          <div class="slider-item swiper-slide">
+                            <div class="slider-image-wrapper">
+                              <img class="slider-image" src="static/img/pologne.jpg" alt="SliderImg">
+                              </div>
+                            <div class="slider-item-content">
+                              <h1>Championnats d'Europe 2024 en Pologne</h1>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+                            </div>
+                          </div>
+                          <div class="slider-item swiper-slide">
+                            <div class="slider-image-wrapper">
+                              <img class="slider-image" src="static/img/lettonie.jpg" alt="SliderImg">
+                              </div>
+                            <div class="slider-item-content">
+                              <h1>Coupe du monde 2024 en Lettonie</h1>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+                            </div>
+                          </div>
+                          <div class="slider-item swiper-slide">
+                            <div class="slider-image-wrapper">
+                              <img class="slider-image" src="static/img/bulgarie.jpg" alt="SliderImg">
+                              </div>
+                            <div class="slider-item-content">
+                              <h1>Championnats du Monde 2024 en Bulagrie</h1>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="slider-buttons">
+                            <button class="swiper-button-prev"></button>
+                            <button class="swiper-button-next"></button>
+                        </div>
+                      
+                        <div class="swiper-pagination"></div>                
                 </section>
             </div>
         </div>
@@ -162,7 +196,7 @@
             }, function(error) {
                 // affiche le message d'erreur pendant 4 secondes
                 setTimeout(function() {
-                    Button.style.backgroundColor = '#f44336';
+                    Button.style.backgroundColor = '#f4433  6';
                     Button.textContent = 'Erreur lors de l\'envoi, veuillez réessayer'; 
                     // Réinitialise le formulaire après 4 secondes supplémentaires
                     setTimeout(function() {
@@ -237,31 +271,41 @@
             });
         }
     });
-    let currentSlide = 0;
 
-    function changeSlide(direction) {
-        const slides = document.querySelectorAll('.slide');
-        slides[currentSlide].classList.remove('active');
-
-        currentSlide += direction;
-        if (currentSlide < 0) {
-            currentSlide = slides.length - 1;
-        } else if (currentSlide >= slides.length) {
-            currentSlide = 0;
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        effect: 'fade',
+        loop: true,
+        speed: 300,
+        mousewheel: {
+            invert: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            dynamicBullets: true
+        },
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         }
+        });
 
-        slides[currentSlide].classList.add('active');
-    }
-
-    // Affiche la première slide au chargement
-    document.addEventListener("DOMContentLoaded", () => {
-        const slides = document.querySelectorAll('.slide');
-        if (slides.length) {
-            slides[0].classList.add('active');
-        }
-    });
-    
-
+        var swiper = new Swiper(".blog-slider", {
+            spaceBetween: 30,
+            effect: "fade",
+            loop: true,
+            mousewheel: {
+            invert: false
+            },
+            // autoHeight: true,
+            pagination: {
+            el: ".blog-slider__pagination",
+            clickable: true
+            }
+        });
     </script>
 </body>
 </html>
