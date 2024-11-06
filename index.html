@@ -53,21 +53,22 @@
                               <div class="blog-slider__img">
                                 <img src="static/img/python.svg" alt="">
                               </div>   
-                              <span class="blog-slider__code">26 December 2019</span>
+                              <span class="blog-slider__code"></span>
                               <div class="blog-slider__title">Trame ICMP en Python</div>
-                              <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div>
+                              <div class="blog-slider__text">Projet de fin de semestre 1 de ma première année de BUT en Réseaux et Télécommunications. L'objectif était de recréer une trame ICMP en Python et de tester la fonctionnalité de ping. Ce projet m'a permis d'apprendre à utiliser les sockets réseau en Python et de mieux comprendre la structure de l'en-tête ICMP.</div>
                               <a class="blog-slider__button" onclick="Githubcode('Scolaire_icmp')">AFFICHER LE CODE</a>
                             </div>
                           </div>
                           <div class="blog-slider__item swiper-slide">
                             <div class="blog-slider__content">
                               <div class="blog-slider__img">
-                                <img src="static/img/arduino.svg" alt="">
+                                <img src="static/img/arduino.svg" alt="" style="float: left;">
+                                <img src="static/img/python.svg" alt="">
                               </div>
-                              <span class="blog-slider__code">26 December 2019</span>
-                              <div class="blog-slider__title">Projets Arduino</div>
-                              <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
-                              <a class="blog-slider__button">AFFICHER LE CODE</a>
+                              <span class="blog-slider__code">2022</span>
+                              <div class="blog-slider__title">Projet de Tête de Robot Humanoïde</div>
+                              <div class="blog-slider__text">Projet de terminale réalisé en équipe avec mes camarades de classe, où nous avons travaillé sur la conception d'une tête de robot humanoïde. J'ai utilisé Arduino pour programmer les mouvements de la tête à l'aide de servomoteurs. En parallèle, j'ai employé Python pour implémenter la reconnaissance vocale et la synthèse de la parole. Nous avons également exploré le machine learning afin de permettre à BOBBY, notre robot, de lire.</div>
+                              <a class="blog-slider__button" onclick="Githubcode('Scolaire_icmp')">AFFICHER LE CODE</a>
                             </div>
                           </div>
                           
@@ -77,9 +78,9 @@
                                 <img src="static/img/golang.svg" />
                               </div>
                               <span class="blog-slider__code">26 December 2019</span>
-                              <div class="blog-slider__title">Projet Go</div>
-                              <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
-                              <a class="blog-slider__button">AFFICHER LE CODE</a>
+                              <div class="blog-slider__title">Déploiement d'applications communicantes en Go</div>
+                              <div class="blog-slider__text">Projet en cours</div>
+                              <a class="blog-slider__button" onclick="Githubcode('Scolaire_icmp')">AFFICHER LE CODE</a>
                             </div>
                           </div>
                           
@@ -109,7 +110,7 @@
                         <div class="swiper-wrapper">
                           <div class="slider-item swiper-slide">
                             <div class="slider-image-wrapper">
-                              <img class="slider-image" src="static/img/pologne.jpg" alt="SliderImg">
+                              <img class="slider-image" src="static/img/pologne1.jpg" alt="SliderImg">
                               </div>
                             <div class="slider-item-content">
                               <h1>Championnats d'Europe 2024 en Pologne</h1>
@@ -118,7 +119,7 @@
                           </div>
                           <div class="slider-item swiper-slide">
                             <div class="slider-image-wrapper">
-                              <img class="slider-image" src="static/img/lettonie.jpg" alt="SliderImg">
+                              <img class="slider-image" src="static/img/lettonie1.jpg" alt="SliderImg">
                               </div>
                             <div class="slider-item-content">
                               <h1>Coupe du monde 2024 en Lettonie</h1>
@@ -210,22 +211,28 @@
         });
     });
     // Sélectionne les éléments du DOM
-    const toggleCodeBtn = document.getElementById('toggleCodeBtn');
+    const CodeBtn = document.getElementsByClassName('blog-slider__button')[0];
     const codeBlock = document.getElementById('codeBlock');
 
-    // Ajoute un événement de clic sur le bouton
     function affiche(Block) {
-        // Vérifie si le bloc de code est actuellement visible
-        if (Block.style.display === 'none' || Block.style.display === '') {
-            // Si le code est masqué, on l'affiche
-            Block.style.display = 'block';
-            toggleCodeBtn.textContent = 'Masquer le code';
+        if (Block.classList.contains('visible')) {
+            // Si visible, commence à masquer le bloc
+            Block.classList.remove('visible');
+            CodeBtn.textContent = 'AFFICHER LE CODE';
+
+            // Une fois la transition terminée, applique display: none
+            setTimeout(() => {
+                Block.style.display = 'none';
+            }, 500); // Délai doit correspondre à la durée de la transition
         } else {
-            // Si le code est visible, on le masque
-            Block.style.display = 'none';
-            toggleCodeBtn.textContent = 'Afficher le code';
+            // Si masqué, affiche le bloc et démarre la transition
+            Block.style.display = 'block';
+            setTimeout(() => {
+                Block.classList.add('visible');
+            }, 10); // Petit délai pour déclencher la transition
+            CodeBtn.textContent = 'MASQUER LE CODE';
         }
-    };
+    }
     
     function Githubcode(url) {
         // Utilisation de Fetch API pour récupérer le contenu du fichier
@@ -233,6 +240,7 @@
         urls.set("Perso_strava", "https://raw.githubusercontent.com/Jocelin2/Projets/refs/heads/main/Personnel/download_activities.py");
         urls.set("Scolaire_icmp", "https://raw.githubusercontent.com/Jocelin2/Projets/refs/heads/main/Scolaire/Python/ip_handling.py");
         const Block = document.getElementsByClassName(url)[0]
+        const div = document.querySelector('.blog-slider');
         fetch(urls.get(url))
             .then(response => {
             if (!response.ok) {
@@ -250,6 +258,11 @@
                 console.error('Erreur:', error);
                 Block.textContent = 'Erreur lors du chargement du fichier.';
             });		
+        if (div.style.marginRight === '2%') {
+            div.style.margin = 'auto';
+        } else {
+            div.style.marginRight = '2%';
+        }
         affiche(Block);
     };
 
