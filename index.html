@@ -35,7 +35,13 @@
         <!-- Section Profil -->
         <section id="Profil">
             <h1 class="text">Jocelin LAURET</h1>
-            <H2>Bonjour, je m'appelle Jocelin LAURET. Je suis actuellement en deuxième année de BUT en Réseaux et Télécommunication parcours Cybersécurité à l'IUT de Reims-Châlons-Charleville sur le site de Châlons-en-Champagne.</H2>
+            <h2>
+              Bonjour, je m'appelle Jocelin LAURET, étudiant en deuxième année de BUT Réseaux et Télécommunications, 
+              parcours Cybersécurité, à l'IUT de Reims-Châlons-Charleville (site de Châlons-en-Champagne). 
+              Passionné par les enjeux de la cybersécurité et des réseaux, je suis actuellement en quête d'un stage de 10 semaines, 
+              du 14 avril au 20 juin 2024, pour approfondir mes compétences et contribuer à des projets dans ces domaines.
+            </h2>
+            <button class="btn-hover color-9"><a href="static/pdf/CV.pdf">MON CV</a></button>
         </section>
     </header>
 
@@ -44,8 +50,15 @@
             <div class="card">   
                 <!-- Section Projets -->
                 <section id="Projets">
-                    <h1 class="text">Projets :</h1>
-                    <div class="projets">
+                    <h1 class="text">Projets 
+                        <span class="text projets_scolaires" >Scolaires</span>
+                        <span class="text projets_perso">Personnels</span>
+                    <input type="checkbox" id="switch_projets" class="switch" onchange="change_projet()">
+                    <label for="switch_projets" >
+                        <span class="slider round"></span>
+                    </label>
+                    </h1>
+                    <div class="projets projets_scolaires">
                     <div class="blog-slider">
                         <div class="blog-slider__wrp swiper-wrapper">
                           <div class="blog-slider__item swiper-slide">
@@ -89,8 +102,25 @@
                       </div>
                       <pre class="Scolaire_icmp"><code class="language-python"></code></pre>
                     </div>
-                    <h3><a href="https://github.com/Jocelin2?tab=repositories">Github</a></h3>
-                    <button class="custom-btn"><a href="static/pdf/CV.pdf">CV</a></button>
+                    <div class="projets projets_perso">
+                      <div class="blog-slider">
+                          <div class="blog-slider__wrp swiper-wrapper">
+                            <div class="blog-slider__item swiper-slide">
+                              <div class="blog-slider__content">
+                                <div class="blog-slider__img">
+                                  <img src="static/img/python.svg" alt="">
+                                </div>   
+                                <span class="blog-slider__code"></span>
+                                <div class="blog-slider__title">Analyse de mes données sportives</div>
+                                <div class="blog-slider__text">Dans le cadre de ce projet, j'ai exploité l'API de Strava pour collecter mes données, puis je les ai utilisées avec Flask pour effectuer mes analyses.</div>
+                                <a class="blog-slider__button" onclick="Githubcode('Scolaire_icmp')">AFFICHER LE CODE</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="blog-slider__pagination"></div>
+                        </div>
+                        <pre class="Scolaire_icmp"><code class="language-python"></code></pre>
+                      </div>
                 </section>
             </div>
         </div>
@@ -107,41 +137,80 @@
                         groupe France et de participer à des compétitions internationales.
                     </h3>
                     <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                          <div class="slider-item swiper-slide">
-                            <div class="slider-image-wrapper">
-                              <img class="slider-image" src="static/img/pologne1.jpg" alt="SliderImg">
-                              </div>
-                            <div class="slider-item-content">
-                              <h1>Championnats d'Europe 2024 en Pologne</h1>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                            </div>
+                      <div class="swiper-wrapper">
+                        <div class="slider-item swiper-slide">
+                          <div class="slider-image-wrapper">
+                            <img class="slider-image" src="static/img/pologne1.jpg" alt="SliderImg">
                           </div>
-                          <div class="slider-item swiper-slide">
-                            <div class="slider-image-wrapper">
-                              <img class="slider-image" src="static/img/lettonie1.jpg" alt="SliderImg">
-                              </div>
-                            <div class="slider-item-content">
-                              <h1>Coupe du monde 2024 en Lettonie</h1>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                            </div>
-                          </div>
-                          <div class="slider-item swiper-slide">
-                            <div class="slider-image-wrapper">
-                              <img class="slider-image" src="static/img/bulgarie.jpg" alt="SliderImg">
-                              </div>
-                            <div class="slider-item-content">
-                              <h1>Championnats du Monde 2024 en Bulagrie</h1>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                            </div>
+                          <div class="slider-item-content">
+                            <h1>Championnats d'Europe 2024 en Pologne</h1>
+                            <p>
+                              Ce premier championnats de la saison 2024 n'a pas été une 
+                              réussite pour moi. Avec des resultats en dessous de mes attentes,
+                            </p>
+                              <li>Résultats :  
+                                <ul>Sprint : 24ème</ul>
+                                <ul>Longue distance : 11ème</ul>
+                                <ul>Moyenne distance : 10ème</ul>
+                                <ul>Relais : 1er</ul>
+                              </li>
+                            <p>
+                              Suite à ces résultats, j'ai travaillé sur mes points faibles
+                              pour avoir de meilleurs résultats lors des prochains championnats.
+                            </p>
                           </div>
                         </div>
-                        <div class="slider-buttons">
-                            <button class="swiper-button-prev"></button>
-                            <button class="swiper-button-next"></button>
+                        <div class="slider-item swiper-slide">
+                          <div class="slider-image-wrapper">
+                            <img class="slider-image" src="static/img/lettonie1.jpg" alt="SliderImg">
+                            </div>
+                          <div class="slider-item-content">
+                            <h1>Coupe du monde 2024 en Lettonie</h1>
+                            <p>
+                              Lors de cette coupe du monde, j'ai pu courir dans des conditions
+                              difficiles. En effet, j'ai couru dans la categorie élite, ce qui
+                              m'a permis de me confronter à des coureurs de haut niveau. Malgré
+                              une mauvaise forme physique, j'ai réussi à obtenir de bons résultats.
+                            </p>
+                              <li>Résultats :
+                                <ul>Sprint : 37ème</ul>
+                                <ul>Longue distance : 39ème</ul>
+                                <ul>Relais : 26ème</ul>
+                              </li>
+                            <p>
+                              Suite à cette coupe du monde, j'ai repis confiance en moi et j'ai
+                              pu travailler sur le dernier objectif de la saison : les championnats
+                              du monde.
+                            </p>
+                          </div>
                         </div>
-                      
-                        <div class="swiper-pagination"></div>                
+                        <div class="slider-item swiper-slide">
+                          <div class="slider-image-wrapper">
+                            <img class="slider-image" src="static/img/bulgarie1.jpg" alt="SliderImg">
+                            </div>
+                          <div class="slider-item-content">
+                            <h1>Championnats du Monde 2024 en Bulagrie</h1>
+                            <p>
+                              Lors de ces championnats j'ai su rester concentrer sur mes objectifs
+                              sans m'attendre à des résultats exceptionnels. Ainsi je n'avait pas
+                              de pression et j'ai pu courir sans stress. C'est ainsi que m'algrè mais 
+                              attentes, j'ai réussi à obtenir de bons résultats.
+                            </p>
+                              <li>Résultats :
+                                <ul>Sprint : 6ème</ul>
+                                <ul>Mass start : 4ème</ul>
+                                <ul>Moyenne distance : 5ème</ul>
+                                <ul>Longue distance : 7ème</ul>
+                                <ul>Relais : 1er</ul>
+                              </li>
+                            <p>
+                              Suite à ces championnats, j'ai aprit de mes erreurs et je vais
+                              travailler sur mes points faibles pour les prochaines saisons.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-pagination"></div>                
                 </section>
             </div>
         </div>
@@ -150,12 +219,24 @@
     <!-- Section Contact -->
     <footer>
         <h2 id="Contact" class="text">Contact</h2>
+        <div class="contact">
         <form id="contact-form">
             <input type="text" id="name" placeholder="Votre nom" required>
             <input type="email" id="email" placeholder="Votre email" required>
             <textarea id="message" placeholder="Votre message" rows="4" required></textarea>
             <button type="submit">Envoyer</button>
-        </form>      
+        </form> 
+        <div class="social">
+          <a href="https://github.com/Jocelin2?tab=repositories">
+            <img src="static/img/github.svg" alt="icon github">
+              <h1>github</h1>
+          </a>
+          <a href="https://www.linkedin.com/in/jocelin-lauret">
+            <img src="static/img/linkedin.svg" alt="icon linkedin">
+              <h1>linkedin</h1>
+          </a>  
+        </div>
+        </div>     
     </footer>
 
     <!-- Scripts JavaScript -->
@@ -319,6 +400,23 @@
             clickable: true
             }
         });
+
+        function change_projet() {
+          var scolaires = document.querySelectorAll('.projets_scolaires');
+          var persos = document.querySelectorAll('.projets_perso');
+          var switch_projets = document.getElementById('switch_projets');
+          
+          if (switch_projets.checked) {
+              // Masque tous les projets scolaires et affiche tous les projets personnels
+              scolaires.forEach(scolaire => scolaire.style.display = 'none');
+              persos.forEach(perso => perso.style.display = 'inline-flex');
+          } else {
+              // Affiche tous les projets scolaires et masque tous les projets personnels
+              scolaires.forEach(scolaire => scolaire.style.display = 'inline-flex');
+              persos.forEach(perso => perso.style.display = 'none');
+          }
+        }
+
     </script>
 </body>
 </html>
