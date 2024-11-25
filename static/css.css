@@ -205,7 +205,7 @@ header h2 {
 /* Navbar */
 
 nav {
-    background-color: #85c5ff;
+    background-color: #33333300;
     padding: 1rem;
     text-align: center;
     width: -webkit-fill-available;
@@ -267,7 +267,7 @@ nav ul li a {
         top: 100%; /* Juste en dessous de la barre */
         left: 0;
         width: 100%;
-        background-color: #333333;
+        background-color: #4f9fe8;
         text-align: center;
         padding: 10px 0;
     }
