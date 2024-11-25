@@ -275,7 +275,6 @@ nav ul li a {
 
 .nav-links {
     transition: transform 0.3s ease-in-out;
-    transform: translateY(-100%);
 }
 
 .nav-links.active {
@@ -715,6 +714,30 @@ align-items: center;
 @media screen and (max-width: 768px) {
 .blog-slider__item {
 flex-direction: column;
+}
+@media screen and (max-width: 450px) {
+    .blog-slider {
+        max-width: 200px;
+    }
+    header h2 {
+        font-size: 1rem;
+    }
+    .blog-slider__button {
+        display: none;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    .slider-item-content p, .slider-item-content li {
+        font-size: 0.5rem;
+        line-height: 10px;
+    }
+    .swiper-container {
+        max-width: 200px;
+    }
+    .swiper-pagination {
+        left: 65% !important;
+    }
 }
 }
 .blog-slider__item.swiper-slide-active .blog-slider__img img {
