@@ -252,7 +252,8 @@ nav ul li a {
 /* Pour les écrans inférieurs à 768px */
 @media (max-width: 768px) {
     .menu-icon {
-        display: block; /* Afficher le menu hamburger */
+        display: inline-block; /* Afficher le menu hamburger */
+        float: left;
     }
 
     .nav-links {
@@ -676,7 +677,7 @@ button:hover {
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
 
 .blog-slider {
-width: -webkit-fill-available;
+width: 80%;
 margin: auto;
 position: relative;
 z-index: 0;
@@ -698,7 +699,7 @@ height: 400px;
 .blog-slider {
 min-height: 500px;
 height: auto;
-margin: 180px auto;
+margin: 10px auto;
 max-width: 300px;
 }
 }
