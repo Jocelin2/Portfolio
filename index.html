@@ -12,34 +12,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Jocelin LAURET</title>
     <link rel="stylesheet" href="static/css.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.css" rel="stylesheet" />
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-python.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
     <style>
     </style>
 </head>
 <body>
-    <nav>
-        <h1>Portfolio</h1>
-        <ul>
-            <li><a href="#Profil">Profil</a></li>
-            <li><a href="#Projets">Projets</a></li>
-            <li><a href="#Sport">Sport</a></li>
-            <li><a href="#Contact">Contact</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <h1>Portfolio</h1>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links">
+        <li><a href="#Profil">Profil</a></li>
+        <li><a href="#Projets">Projets</a></li>
+        <li><a href="#Sport">Sport</a></li>
+        <li><a href="#Contact">Contact</a></li>
+    </ul>
+  </nav>
     <header>
         <!-- Section Profil -->
         <section id="Profil">
             <h1 class="text">Jocelin LAURET</h1>
             <h2>
-              Bonjour, je m'appelle Jocelin LAURET, étudiant en deuxième année de BUT Réseaux et Télécommunications, 
-              parcours Cybersécurité, à l'IUT de Reims-Châlons-Charleville (site de Châlons-en-Champagne). 
-              Passionné par les enjeux de la cybersécurité et des réseaux, je suis actuellement en quête d'un stage de 10 semaines, 
-              du 14 avril au 20 juin 2024, pour approfondir mes compétences et contribuer à des projets dans ces domaines.
+              Je m'appelle Jocelin LAURET, étudiant en deuxième année de BUT Réseaux et Télécommunications
+              , parcours Cybersécurité, à l'IUT de Reims-Châlons-Charleville (site de Châlons-en-Champagne). 
+              Passionné par les enjeux de la cybersécurité et des réseaux, je suis actuellement à la recherche 
+              d'un stage de 10 semaines, du 14 avril au 20 juin 2024, pour développer mes compétences et 
+              contribuer à des projets innovants dans ces domaines.
             </h2>
             <button class="btn-hover color-9"><a href="static/pdf/CV.pdf">MON CV</a></button>
         </section>
@@ -50,14 +58,15 @@
             <div class="card">   
                 <!-- Section Projets -->
                 <section id="Projets">
-                    <h1 class="text">Projets 
-                        <span class="text projets_scolaires" >Scolaires</span>
-                        <span class="text projets_perso">Personnels</span>
-                    <input type="checkbox" id="switch_projets" class="switch" onchange="change_projet()">
-                    <label for="switch_projets" >
-                        <span class="slider round"></span>
-                    </label>
-                    </h1>
+                    <h1 class="text">Projets :</h1>
+                    <div class="navbar_projets">
+                      <ul>
+                        <li><h3 class="selected" onclick="change_projet('scolaires')">Scolaire</h3></li>
+                        <li><h3 onclick="change_projet('perso')">Personnel</h3></li>
+                        <!-- <li><h3 onclick="change_projet('hobby')">Hobby</h3></li> -->
+                        <li><h3 onclick="change_projet('cyber')">Cybersécurité</h3></li>
+                      </ul>
+                    </div>
                     <div class="projets projets_scolaires">
                     <div class="blog-slider">
                         <div class="blog-slider__wrp swiper-wrapper">
@@ -66,10 +75,10 @@
                               <div class="blog-slider__img">
                                 <img src="static/img/python.svg" alt="">
                               </div>   
-                              <span class="blog-slider__code"></span>
+                              <span class="blog-slider__code">2023</span>
                               <div class="blog-slider__title">Trame ICMP en Python</div>
                               <div class="blog-slider__text">Projet de fin de semestre 1 de ma première année de BUT en Réseaux et Télécommunications. L'objectif était de recréer une trame ICMP en Python et de tester la fonctionnalité de ping. Ce projet m'a permis d'apprendre à utiliser les sockets réseau en Python et de mieux comprendre la structure de l'en-tête ICMP.</div>
-                              <a class="blog-slider__button" onclick="Githubcode('Scolaire_icmp')">AFFICHER LE CODE</a>
+                              <a class="blog-slider__button" onclick="Githubcode('Scolaire_icmp')">VOIR LE CODE</a>
                             </div>
                           </div>
                           <div class="blog-slider__item swiper-slide">
@@ -81,7 +90,7 @@
                               <span class="blog-slider__code">2022</span>
                               <div class="blog-slider__title">Projet de Tête de Robot Humanoïde</div>
                               <div class="blog-slider__text">Projet de terminale réalisé en équipe avec mes camarades de classe, où nous avons travaillé sur la conception d'une tête de robot humanoïde. J'ai utilisé Arduino pour programmer les mouvements de la tête à l'aide de servomoteurs. En parallèle, j'ai employé Python pour implémenter la reconnaissance vocale et la synthèse de la parole. Nous avons également exploré le machine learning afin de permettre à BOBBY, notre robot, de lire.</div>
-                              <a class="blog-slider__button" onclick="Githubcode('Scolaire_icmp')">AFFICHER LE CODE</a>
+                              <a class="blog-slider__button" onclick="Githubcode('Perso_strava')">VOIR LE CODE</a>
                             </div>
                           </div>
                           
@@ -92,15 +101,16 @@
                               </div>
                               <span class="blog-slider__code">26 December 2019</span>
                               <div class="blog-slider__title">Déploiement d'applications communicantes en Go</div>
-                              <div class="blog-slider__text">Projet en cours</div>
-                              <a class="blog-slider__button" onclick="Githubcode('Scolaire_icmp')">AFFICHER LE CODE</a>
+                              <div class="blog-slider__text"><h1>Projet en cours</h1></div>
+                              <!-- <a class="blog-slider__button" onclick="Githubcode('')">VOIR LE CODE</a> -->
                             </div>
                           </div>
                           
                         </div>
                         <div class="blog-slider__pagination"></div>
                       </div>
-                      <pre class="Scolaire_icmp"><code class="language-python"></code></pre>
+                      <pre class="Scolaire_icmp"><code class="python"></code></pre>
+                      <pre class="Perso_strava"><code class="python"></code></pre>
                     </div>
                     <div class="projets projets_perso">
                       <div class="blog-slider">
@@ -112,14 +122,16 @@
                                 </div>   
                                 <span class="blog-slider__code"></span>
                                 <div class="blog-slider__title">Analyse de mes données sportives</div>
-                                <div class="blog-slider__text">Dans le cadre de ce projet, j'ai exploité l'API de Strava pour collecter mes données, puis je les ai utilisées avec Flask pour effectuer mes analyses.</div>
-                                <a class="blog-slider__button" onclick="Githubcode('Scolaire_icmp')">AFFICHER LE CODE</a>
+                                <div class="blog-slider__text">
+                                  <h1>Projet en cours</h1>
+                                  Dans le cadre de ce projet, j'ai exploité l'API de Strava pour collecter mes données, puis je les ai utilisées avec Flask pour effectuer mes analyses.</div>
+                                <a class="blog-slider__button" onclick="Githubcode('Perso_strava')">VOIR LE CODE</a>
                               </div>
                             </div>
                           </div>
                           <div class="blog-slider__pagination"></div>
                         </div>
-                        <pre class="Scolaire_icmp"><code class="language-python"></code></pre>
+                        <pre class="Perso_strava"><code class="python"></code></pre>
                       </div>
                 </section>
             </div>
@@ -296,32 +308,30 @@
     const codeBlock = document.getElementById('codeBlock');
 
     function affiche(Block) {
-        if (Block.classList.contains('visible')) {
-            // Si visible, commence à masquer le bloc
-            Block.classList.remove('visible');
-            CodeBtn.textContent = 'AFFICHER LE CODE';
+      const blogSlider = document.querySelector('.blog-slider');
+      if (Block.classList.contains('visible')) { 
+        setTimeout(() => {
+          Block.classList.remove('visible');
+        }, 500); // Délai doit correspondre à la durée de la transition   
+        blogSlider.style.width = '800px'     
+        CodeBtn.textContent = 'VOIR LE CODE';
 
-            // Une fois la transition terminée, applique display: none
-            setTimeout(() => {
-                Block.style.display = 'none';
-            }, 500); // Délai doit correspondre à la durée de la transition
-        } else {
-            // Si masqué, affiche le bloc et démarre la transition
-            Block.style.display = 'block';
-            setTimeout(() => {
-                Block.classList.add('visible');
-            }, 10); // Petit délai pour déclencher la transition
-            CodeBtn.textContent = 'MASQUER LE CODE';
-        }
-    }
+      } else {
+        setTimeout(() => {
+          Block.classList.add('visible');
+        }, 10); // Petit délai pour déclencher la transition
+        CodeBtn.textContent = 'MASQUER LE CODE';
+        blogSlider.style.width = '50%'
+      }
+    };
+
     
     function Githubcode(url) {
         // Utilisation de Fetch API pour récupérer le contenu du fichier
         var urls = new Map();
         urls.set("Perso_strava", "https://raw.githubusercontent.com/Jocelin2/Projets/refs/heads/main/Personnel/download_activities.py");
         urls.set("Scolaire_icmp", "https://raw.githubusercontent.com/Jocelin2/Projets/refs/heads/main/Scolaire/Python/ip_handling.py");
-        const Block = document.getElementsByClassName(url)[0]
-        const div = document.querySelector('.blog-slider');
+        const Block = document.getElementsByClassName(url)[0];
         fetch(urls.get(url))
             .then(response => {
             if (!response.ok) {
@@ -332,20 +342,39 @@
             .then(data => {
                 // Insérer le contenu du fichier dans le bloc de code
                 Block.textContent = data;
-                // Ré-appliquer la coloration syntaxique avec Prism.js
-                Prism.highlightElement(Block);
+                hljs.highlightBlock(Block);
             })
             .catch(error => {
                 console.error('Erreur:', error);
                 Block.textContent = 'Erreur lors du chargement du fichier.';
             });		
-        if (div.style.marginRight === '2%') {
-            div.style.margin = 'auto';
+            
+        var pre = document.querySelector('pre.' + url);
+        if (pre.style.marginLeft === '2%') {
+            pre.style.margin = 'auto';
         } else {
-            div.style.marginRight = '2%';
-        }
+            pre.style.marginLeft = '2%';
+        };
         affiche(Block);
     };
+
+    var swiper = new Swiper(".blog-slider", {
+      spaceBetween: 30,
+      effect: "fade",
+      loop: true,
+      mousewheel: {
+        invert: false
+      },
+      pagination: {
+        el: ".blog-slider__pagination",
+        clickable: true
+      },
+      on: {
+        slideChange: function () {
+          //
+        }
+      }
+    });
 
     //en scrollant le background du nav devient blanc et le texte devient noir au bout de 100vh
     window.addEventListener('scroll', function() {
@@ -367,56 +396,56 @@
     });
 
     var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        effect: 'fade',
-        loop: true,
-        speed: 300,
-        mousewheel: {
-            invert: false,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            dynamicBullets: true
-        },
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+      slidesPerView: 1,
+      spaceBetween: 20,
+      effect: 'fade',
+      loop: true,
+      speed: 300,
+      mousewheel: {
+          invert: false,
+      },
+      pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          dynamicBullets: true
+      },
+      // Navigation arrows
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      }
+
+
+    });
+
+
+    function change_projet(name) {
+      var projets = document.querySelectorAll('.projets');
+      projets.forEach(function(projet) {
+        if (projet.classList.contains('projets_' + name)) {
+          projet.style.display = 'inline-flex';
+        } else {
+          projet.style.display = 'none';
         }
-        });
-
-        var swiper = new Swiper(".blog-slider", {
-            spaceBetween: 30,
-            effect: "fade",
-            loop: true,
-            mousewheel: {
-            invert: false
-            },
-            // autoHeight: true,
-            pagination: {
-            el: ".blog-slider__pagination",
-            clickable: true
-            }
-        });
-
-        function change_projet() {
-          var scolaires = document.querySelectorAll('.projets_scolaires');
-          var persos = document.querySelectorAll('.projets_perso');
-          var switch_projets = document.getElementById('switch_projets');
+      });
           
-          if (switch_projets.checked) {
-              // Masque tous les projets scolaires et affiche tous les projets personnels
-              scolaires.forEach(scolaire => scolaire.style.display = 'none');
-              persos.forEach(perso => perso.style.display = 'inline-flex');
-          } else {
-              // Affiche tous les projets scolaires et masque tous les projets personnels
-              scolaires.forEach(scolaire => scolaire.style.display = 'inline-flex');
-              persos.forEach(perso => perso.style.display = 'none');
-          }
-        }
+    }
+    document.querySelectorAll('.navbar_projets h3').forEach(item => {
+      item.addEventListener('click', () => {
+        // Supprime la classe 'selected' de tous les onglets
+        document.querySelectorAll('.navbar_projets h3').forEach(h3 => {
+          h3.classList.remove('selected');
+        });
 
+        // Ajoute la classe 'selected' à l'onglet cliqué
+        item.classList.add('selected');
+      });
+    });
+    
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
     </script>
 </body>
 </html>
