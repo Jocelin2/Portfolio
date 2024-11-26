@@ -304,7 +304,7 @@ section {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
-    width: 96%;
+    /* width: 96%; */
     margin: auto;
 }
 
@@ -574,8 +574,8 @@ button:hover {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     width: auto;
     position: relative;
-    max-width: 90%;
-    height: 600px; /* auto */
+    /* max-width: 90%; */
+    height: 700px; /* auto */
     max-height: max-content;
     border-radius: 10px;
     z-index: 0;
@@ -694,7 +694,8 @@ transition: all 0.3s;
 }
 @media screen and (max-width: 992px) {
 .blog-slider {
-max-width: 680px;
+/* max-width: 680px; */
+width: 90%;
 height: 400px;
 }
 }
@@ -703,19 +704,23 @@ height: 400px;
 min-height: 500px;
 height: auto;
 margin: 10px auto;
-max-width: 300px;
+/* max-width: 300px; */
 }
 }
 @media screen and (max-height: 500px) and (min-width: 992px) {
-.blog-slider {
-height: 350px;
-}
+/* .blog-slider {
+height: 90%;
+} */
 }
 .blog-slider__item {
 display: flex;
 align-items: center;
 }
+
 @media screen and (max-width: 768px) {
+    .social h1 {
+        font-size: 1.5rem;
+    }
     .blog-slider__item {
     flex-direction: column;
     }
@@ -730,7 +735,7 @@ align-items: center;
     }
     .swiper-slide {
         display: block !important;
-        height: 650px !important;
+        height: auto !important; /* 700px */
     }
     .slider-item-content p, .slider-item-content li {
         font-size: 0.5rem;
@@ -750,9 +755,9 @@ align-items: center;
     }
 }
 @media screen and (max-width: 450px) {
-    .blog-slider {
+    /* .blog-slider {
         max-width: 200px;
-    }
+    } */
     header h2 {
         font-size: 1rem;
     }
@@ -821,13 +826,17 @@ transition-delay: 1.6s;
 transition-delay: 1.7s;
 }
 .blog-slider__img img {
-width: 10%;
+width: 100px;
 height: 100%;
 object-fit: cover;
 display: block;
 opacity: 0;
 border-radius: 20px;
 transition: all 0.3s;
+}
+
+.blog-slider__img {
+    display: flex;
 }
 
 @media screen and (max-width: 768px) {
@@ -852,7 +861,7 @@ padding-right: 25px;
 @media screen and (max-width: 768px) {
 .blog-slider__content {
 /* margin-top: -80px; */
-text-align: center;
+/* text-align: center; */
 padding: 0 30px;
 }
 }

@@ -73,44 +73,55 @@
                           <div class="blog-slider__item swiper-slide">
                             <div class="blog-slider__content">
                               <div class="blog-slider__img">
+                                <img src="static/img/golang.svg" />
+                              </div>
+                              <span class="blog-slider__code">2024</span>
+                              <div class="blog-slider__title">Déploiement d'applications communicantes en Go</div>
+                              <div class="blog-slider__text"><h1>Projet en cours</h1></div>
+                              <!-- <a class="blog-slider__button" href="">VOIR LE PROJET</a> -->
+                            </div>
+                          </div>
+                          <div class="blog-slider__item swiper-slide">
+                            <div class="blog-slider__content">
+                              <div class="blog-slider__img">
                                 <img src="static/img/python.svg" alt="">
                               </div>   
                               <span class="blog-slider__code">2023</span>
                               <div class="blog-slider__title">Trame ICMP en Python</div>
                               <div class="blog-slider__text">Projet de fin de semestre 1 de ma première année de BUT en Réseaux et Télécommunications. L'objectif était de recréer une trame ICMP en Python et de tester la fonctionnalité de ping. Ce projet m'a permis d'apprendre à utiliser les sockets réseau en Python et de mieux comprendre la structure de l'en-tête ICMP.</div>
-                              <a class="blog-slider__button" onclick="Githubcode('Scolaire_icmp')">VOIR LE CODE</a>
+                              <a class="blog-slider__button" href="">VOIR LE PROJET</a>
                             </div>
                           </div>
                           <div class="blog-slider__item swiper-slide">
                             <div class="blog-slider__content">
                               <div class="blog-slider__img">
-                                <img src="static/img/arduino.svg" alt="" style="float: left;">
+                                <img src="static/img/arduino.svg" alt="">
                                 <img src="static/img/python.svg" alt="">
                               </div>
                               <span class="blog-slider__code">2022</span>
                               <div class="blog-slider__title">Projet de Tête de Robot Humanoïde</div>
                               <div class="blog-slider__text">Projet de terminale réalisé en équipe avec mes camarades de classe, où nous avons travaillé sur la conception d'une tête de robot humanoïde. J'ai utilisé Arduino pour programmer les mouvements de la tête à l'aide de servomoteurs. En parallèle, j'ai employé Python pour implémenter la reconnaissance vocale et la synthèse de la parole. Nous avons également exploré le machine learning afin de permettre à BOBBY, notre robot, de lire.</div>
-                              <a class="blog-slider__button" onclick="Githubcode('Perso_strava')">VOIR LE CODE</a>
+                              <a class="blog-slider__button" href="">VOIR LE PROJET</a>
                             </div>
                           </div>
-                          
                           <div class="blog-slider__item swiper-slide">
                             <div class="blog-slider__content">
                               <div class="blog-slider__img">
-                                <img src="static/img/golang.svg" />
+                                <img src="static/img/python.svg" alt="">
+                              </div>   
+                              <span class="blog-slider__code">2020</span>
+                              <div class="blog-slider__title">BOBBY : robot humanoîde</div>
+                              <div class="blog-slider__text">
+                                Projet de Terminale
                               </div>
-                              <span class="blog-slider__code">26 December 2019</span>
-                              <div class="blog-slider__title">Déploiement d'applications communicantes en Go</div>
-                              <div class="blog-slider__text"><h1>Projet en cours</h1></div>
-                              <!-- <a class="blog-slider__button" onclick="Githubcode('')">VOIR LE CODE</a> -->
+                              <a class="blog-slider__button" href="">VOIR LE PROJET</a>
                             </div>
                           </div>
-                          
                         </div>
                         <div class="blog-slider__pagination"></div>
                       </div>
-                      <pre class="Scolaire_icmp"><code class="python"></code></pre>
-                      <pre class="Perso_strava"><code class="python"></code></pre>
+                      <!-- <pre class="Scolaire_icmp"><code class="python"></code></pre>
+                      <pre class="Perso_strava"><code class="python"></code></pre> -->
                     </div>
                     <div class="projets projets_perso">
                       <div class="blog-slider">
@@ -118,20 +129,35 @@
                             <div class="blog-slider__item swiper-slide">
                               <div class="blog-slider__content">
                                 <div class="blog-slider__img">
+                                  <img src="static/img/html.svg" alt="">
+                                  <img src="static/img/css.svg" alt="">
+                                  <img src="static/img/javascript.svg" alt="">
+                                </div>   
+                                <span class="blog-slider__code">2024</span>
+                                <div class="blog-slider__title">Portfolio</div>
+                                <div class="blog-slider__text">
+                                  Projet pour présenter mes compétences et mes réalisations. J'ai utilisé HTML, CSS et JavaScript pour créer ce site web.  
+                                </div>
+                                <a class="blog-slider__button" href="">VOIR LE PROJET</a>
+                              </div>
+                            </div>
+                            <div class="blog-slider__item swiper-slide">
+                              <div class="blog-slider__content">
+                                <div class="blog-slider__img">
                                   <img src="static/img/python.svg" alt="">
                                 </div>   
-                                <span class="blog-slider__code"></span>
+                                <span class="blog-slider__code">2024</span>
                                 <div class="blog-slider__title">Analyse de mes données sportives</div>
                                 <div class="blog-slider__text">
                                   <h1>Projet en cours</h1>
                                   Dans le cadre de ce projet, j'ai exploité l'API de Strava pour collecter mes données, puis je les ai utilisées avec Flask pour effectuer mes analyses.</div>
-                                <a class="blog-slider__button" onclick="Githubcode('Perso_strava')">VOIR LE CODE</a>
+                                <a class="blog-slider__button" href="">VOIR LE PROJET</a>
                               </div>
                             </div>
                           </div>
                           <div class="blog-slider__pagination"></div>
                         </div>
-                        <pre class="Perso_strava"><code class="python"></code></pre>
+                        <!-- <pre class="Perso_strava"><code class="python"></code></pre> -->
                       </div>
                 </section>
             </div>
@@ -304,59 +330,59 @@
         });
     });
     // Sélectionne les éléments du DOM
-    const CodeBtn = document.getElementsByClassName('blog-slider__button')[0];
-    const codeBlock = document.getElementById('codeBlock');
+    // const CodeBtn = document.getElementsByClassName('blog-slider__button')[0];
+    // const codeBlock = document.getElementById('codeBlock');
 
-    function affiche(Block) {
-      const blogSlider = document.querySelector('.blog-slider');
-      if (Block.classList.contains('visible')) { 
-        setTimeout(() => {
-          Block.classList.remove('visible');
-        }, 500); // Délai doit correspondre à la durée de la transition   
-        blogSlider.style.width = '800px'     
-        CodeBtn.textContent = 'VOIR LE CODE';
+    // function affiche(Block) {
+    //   const blogSlider = document.querySelector('.blog-slider');
+    //   if (Block.classList.contains('visible')) { 
+    //     setTimeout(() => {
+    //       Block.classList.remove('visible');
+    //     }, 500); // Délai doit correspondre à la durée de la transition   
+    //     blogSlider.style.width = '800px'     
+    //     CodeBtn.textContent = 'VOIR LE PROJET';
 
-      } else {
-        setTimeout(() => {
-          Block.classList.add('visible');
-        }, 10); // Petit délai pour déclencher la transition
-        CodeBtn.textContent = 'MASQUER LE CODE';
-        blogSlider.style.width = '50%'
-      }
-    };
+    //   } else {
+    //     setTimeout(() => {
+    //       Block.classList.add('visible');
+    //     }, 10); // Petit délai pour déclencher la transition
+    //     CodeBtn.textContent = 'MASQUER LE PROJET';
+    //     blogSlider.style.width = '50%'
+    //   }
+    // };
 
     
-    function Githubcode(url) {
-        // Utilisation de Fetch API pour récupérer le contenu du fichier
-        var urls = new Map();
-        urls.set("Perso_strava", "https://raw.githubusercontent.com/Jocelin2/Projets/refs/heads/main/Personnel/download_activities.py");
-        urls.set("Scolaire_icmp", "https://raw.githubusercontent.com/Jocelin2/Projets/refs/heads/main/Scolaire/Python/ip_handling.py");
-        const Block = document.getElementsByClassName(url)[0];
-        fetch(urls.get(url))
-            .then(response => {
-            if (!response.ok) {
-                throw new Error('Erreur lors du chargement du fichier : ' + response.statusText);
-            }
-                return response.text();
-            })
-            .then(data => {
-                // Insérer le contenu du fichier dans le bloc de code
-                Block.textContent = data;
-                hljs.highlightBlock(Block);
-            })
-            .catch(error => {
-                console.error('Erreur:', error);
-                Block.textContent = 'Erreur lors du chargement du fichier.';
-            });		
+    // function Githubcode(url) {
+    //     // Utilisation de Fetch API pour récupérer le contenu du fichier
+    //     var urls = new Map();
+    //     urls.set("Perso_strava", "https://raw.githubusercontent.com/Jocelin2/Projets/refs/heads/main/Personnel/download_activities.py");
+    //     urls.set("Scolaire_icmp", "https://raw.githubusercontent.com/Jocelin2/Projets/refs/heads/main/Scolaire/Python/ip_handling.py");
+    //     const Block = document.getElementsByClassName(url)[0];
+    //     fetch(urls.get(url))
+    //         .then(response => {
+    //         if (!response.ok) {
+    //             throw new Error('Erreur lors du chargement du fichier : ' + response.statusText);
+    //         }
+    //             return response.text();
+    //         })
+    //         .then(data => {
+    //             // Insérer le contenu du fichier dans le bloc de code
+    //             Block.textContent = data;
+    //             hljs.highlightBlock(Block);
+    //         })
+    //         .catch(error => {
+    //             console.error('Erreur:', error);
+    //             Block.textContent = 'Erreur lors du chargement du fichier.';
+    //         });		
             
-        var pre = document.querySelector('pre.' + url);
-        if (pre.style.marginLeft === '2%') {
-            pre.style.margin = 'auto';
-        } else {
-            pre.style.marginLeft = '2%';
-        };
-        affiche(Block);
-    };
+    //     var pre = document.querySelector('pre.' + url);
+    //     if (pre.style.marginLeft === '2%') {
+    //         pre.style.margin = 'auto';
+    //     } else {
+    //         pre.style.marginLeft = '2%';
+    //     };
+    //     affiche(Block);
+    // };
 
     var swiper = new Swiper(".blog-slider", {
       spaceBetween: 30,
@@ -369,11 +395,6 @@
         el: ".blog-slider__pagination",
         clickable: true
       },
-      on: {
-        slideChange: function () {
-          //
-        }
-      }
     });
 
     //en scrollant le background du nav devient blanc et le texte devient noir au bout de 100vh
