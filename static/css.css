@@ -731,11 +731,11 @@ align-items: center;
         width: 25% !important;
     }
     .swiper-container {
-        height: auto;
+        height: 750px;
     }
     .swiper-slide {
         display: block !important;
-        height: auto !important; /* 700px */
+        /* height: auto !important; 700px */
     }
     .slider-item-content p, .slider-item-content li {
         font-size: 0.5rem;
