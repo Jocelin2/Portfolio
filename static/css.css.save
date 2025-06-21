@@ -1,7 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
-
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -18,7 +14,7 @@ body {
 
 /* Style de base pour la navbar */
 .navbar_projets {
-    background-color: white; /* Couleur de fond claire */
+    background-color: #f8f8f8; /* Couleur de fond claire */
     padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour donner du relief */
@@ -151,7 +147,6 @@ select{
     font-size: 5vw;
     font-family: 'Poppins', sans-serif;
 }
-
 
 h3{
     text-align: justify;
@@ -314,13 +309,12 @@ section {
 }
 
 .card {
-    /* background-color: rgba(255, 255, 255, 0.1); */
+    background-color: #f4f4f4;
     border-radius: 8px;
     padding: 1rem;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: -webkit-fill-available;
     margin: 2% auto;
-    /* backdrop-filter: blur(10px); */
 }
 
 pre {
@@ -516,6 +510,7 @@ button:hover {
 }
 
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 @-webkit-keyframes gradient {
     0% {
     background-position: 0% 50%;
@@ -682,6 +677,7 @@ button:hover {
     display: none;
     }
 }
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
 
 .blog-slider {
 width: 80%;
@@ -1029,49 +1025,4 @@ input[type=checkbox].switch:checked + label:before, input[type=checkbox].switch:
 
 .projets_perso {
   display: none;
-}
-
-
-
-/* === Améliorations supplémentaires === */
-
-/* 1. Animations douces au scroll */
-.reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* 2. Dark mode (optionnel via class .dark-mode sur body) */
-body.dark-mode {
-    background: #121212;
-    color: #e0e0e0;
-}
-body.dark-mode nav,
-body.dark-mode footer,
-body.dark-mode .card,
-body.dark-mode #contact-form {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-}
-body.dark-mode nav a,
-body.dark-mode .navbar_projets h3 {
-    color: #e0e0e0;
-}
-
-/* 3. Typographie améliorée */
-body {
-    font-family: 'Poppins', sans-serif;
-}
-
-/* 4. Ajout animation sur boutons */
-button, .btn-hover {
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-button:hover, .btn-hover:hover {
-    transform: scale(1.05);
 }
