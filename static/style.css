@@ -607,7 +607,7 @@ button:hover, .btn-hover:hover {
 
 .footer-content {
     max-width: 600px;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     margin: 0 auto;
     text-align: center;
 }
@@ -656,6 +656,23 @@ button:hover, .btn-hover:hover {
     outline: none;
     border: 1px solid #3f86ed;
     background-color: #333;
+}
+
+.footer-form-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap; /* Pour éviter que ça déborde en petit écran */
+    margin-bottom: 1rem;
+  }
+  
+  .footer-form-row .form-group {
+    flex: 1;
+    min-width: 200px; /* Optionnel pour éviter qu’ils deviennent trop étroits */
+  }
+  
+
+.g-recaptcha {
+    margin: auto;
 }
 
 .btn-footer {
@@ -746,7 +763,7 @@ button:hover, .btn-hover:hover {
   
     /* Footer form */
     .footer-content {
-      padding: 2rem 1rem;
+      padding: 1rem 1rem;
     }
   
     .footer-form input,

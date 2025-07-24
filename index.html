@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- CAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <div id="scroll-animate">
@@ -317,8 +319,7 @@
                 <div class="footer-content" id="Contact">
                     <h2>Contact</h2>
                     <p>N’hésitez pas à me contacter via ce formulaire :</p>
-
-                    <form action="https://formspree.io/f/xovwzpgz" method="POST" class="footer-form">
+                    <!-- <form action="https://formspree.io/f/xovwzpgz" method="POST" class="footer-form">
                         <div class="form-group">
                             <label for="email">Votre email :</label>
                             <input type="email" name="email" id="email" required>
@@ -328,7 +329,25 @@
                             <textarea name="message" id="message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn-footer">Envoyer</button>
-                   </form>
+                    </form> -->
+                    <form id="contact-form" class="footer-form">
+                        <div class="footer-form-row">
+                            <div class="form-group">
+                                <label for="name">Votre nom :</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Votre email :</label>
+                                <input type="email" name="email" id="email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Votre message :</label>
+                            <textarea name="message" id="message" rows="5" required></textarea>
+                        </div>
+                        <div class="g-recaptcha" data-sitekey="6Lf5b4krAAAAABpYwa4xW2st1WlJ39exP16xSpoU"></div><br/>
+                        <button type="submit" class="btn-footer">Envoyer</button>
+                    </form> 
                    <div class="social">
                     <a href="https://github.com/Jocelin2?tab=repositories">
                       <img src="static/img/github.svg" alt="icon github" style="filter: brightness(0) invert(1);">
@@ -345,6 +364,72 @@
         </div>
       </div>
 </body>
+<!-- Mail -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    (function() {
+      emailjs.init("vCwDMPJLBtg6MrbGY");
+    })();
+
+    // Gestionnaire de contact (EmailJS)
+
+    document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Empêche le rechargement de la page lors de la soumission du formulaire
+
+      const Button = document.querySelector('button[type="submit"]');
+      const Form = document.getElementById('contact-form');
+        
+      // change "envoyer" button to "envoi en cours" and add loader SVG
+      Button.textContent = 'Envoi en cours...';
+      
+
+      // Envoie l'email avec EmailJS
+      const recaptchaResponse = grecaptcha.getResponse();
+      if (!recaptchaResponse) {
+          Button.style.backgroundColor = '#f44336';
+          Button.textContent = 'Veuillez compléter le reCAPTCHA';
+          setTimeout(function() {
+              Button.style.backgroundColor = '';
+              Button.textContent = 'Envoyer';
+          }, 4000);
+          return;
+      }
+
+      emailjs.send("service_thfi504", "template_z0mh4i8", {
+          from_name: document.getElementById('name').value,
+          from_email: document.getElementById('email').value,
+          message: document.getElementById('message').value,
+          "g-recaptcha-response": recaptchaResponse
+      }).then(function(response) {
+          // affiche le message de succès pendant 4 secondes
+          setTimeout(function() {
+              Button.style.backgroundColor = '#4caf50';
+              Button.textContent = 'Message envoyé avec succès'; 
+              // Réinitialise le formulaire après 4 secondes supplémentaires
+              setTimeout(function() {
+                  Button.style.backgroundColor = '';
+                  Button.textContent = 'Envoyer';
+                  Form.reset();
+              }, 4000);
+          }, 4000);
+      }, function(error) {
+          // affiche le message d'erreur pendant 4 secondes
+          setTimeout(function() {
+              Button.style.backgroundColor = '#f44336';
+              Button.textContent = 'Erreur lors de l\'envoi, veuillez réessayer'; 
+              // Réinitialise le formulaire après 4 secondes supplémentaires
+              setTimeout(function() {
+                  Button.style.backgroundColor = '';
+                  Button.textContent = 'Envoyer';
+                  Form.reset();
+              }, 4000);
+          }, 4000);
+          console.error('Erreur lors de l\'envoi:', error); // Log l'erreur dans la console
+        });
+      });
+    });
+</script>
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
@@ -395,7 +480,6 @@
 
     });
 </script>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     function scrollFooter(scrollY, heightFooter)
@@ -420,7 +504,7 @@
     $(window).on('load', function() {
         var windowHeight        = $(window).height(),
             footerHeight        = $('footer').height(),
-            heightDocument      = (windowHeight) + ($('.content').height()) + ($('footer').height()) - 20;
+            heightDocument      = (windowHeight) + ($('.content').height()) + ($('footer').height()) + 20;
 
         // Definindo o tamanho do elemento pra animar
         $('#scroll-animate, #scroll-animate-main').css({
