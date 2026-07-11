@@ -1,622 +1,537 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="static/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- CAPTCHA -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jocelin LAURET — Portfolio · Cybersécurité & Réseaux</title>
+  <meta name="description" content="Portfolio de Jocelin LAURET, étudiant en Master Réseaux & Télécoms parcours Administration et Sécurité des Réseaux (Reims), en alternance chez Axians C&S. Projets, parcours et sport de haut niveau (VTT d'orientation).">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/style.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-    <div id="scroll-animate">
-        <div id="scroll-animate-main">
-          <div class="wrapper-parallax">
-            <nav>
-                <p>Portfolio</p>
-                <div class="menu-icon" onclick="toggleMenu()">☰</div>
-                <ul class="nav-links">
-                    <li><a href="#Profil">Profil</a></li>
-                    <li><a href="#Projets">Projets</a></li>
-                    <li><a href="#Sport">Sport</a></li>
-                    <li><a href="#Contact">Contact</a></li>
-                </ul>
-            </nav>
-            <header>
-                <div class="filter">
-                    <div class="header-content">
-                        <h1>Jocelin LAURET</h1>
-                        <p>Étudiant en 3<sup>e</sup> année de BUT Réseaux & Télécoms — Parcours Cybersécurité</p>
-                        <p style="text-decoration: underline;">Actuellement à la recherche d’une alternance pour l’année universitaire 2025–2026</p>
-                        <br>
-                        <p><strong>Rythme :</strong></p>
-                        <p>3 semaines en entreprise / 2 semaines à l’IUT de septembre à février, puis temps plein en entreprise jusqu’à juin, suivi d’un retour à l’IUT.</p>
-                        <a href="static/pdf/CV.pdf" style="text-decoration-line: none;">
-                          <button class="btn-hover color-9">Télécharger mon CV</button>
-                        </a>
-                    </div>
-                </div>
-            </header>
-      
-            <section class="content">
-                <div class="wrapper">
-                    <div class="profil" id="Profil">
-                        <h2>Profil</h2>
-                        <p>Je suis Jocelin LAURET, étudiant en 3<sup>e</sup> année de BUT Réseaux & Télécoms, parcours Cybersécurité. Passionné par les technologies de l'information et la sécurité des systèmes, je suis à la recherche d'une alternance pour mettre en pratique mes compétences et contribuer à des projets concrets.</p>
-                        <div class="parcours">
-                            <h3>Mon Parcours</h3>
-                            <ul class="timeline">
-                                <li>
-                                    <span class="timeline-date">2020 – 2023</span>
-                                    <div class="timeline-content">
-                                      <h4>Baccalauréat – Spécialités Mathématiques & NSI</h4>
-                                      <p>Lycée La Fayette, Champagne-sur-Seine - 77</p>
-                                    </div>
-                                  </li>
-                                <li>
-                                    <span class="timeline-date">2023 – Aujourd’hui</span>
-                                    <div class="timeline-content">
-                                    <h4>BUT Réseaux & Télécoms – Cybersécurité</h4>
-                                    <p>IUT de Reims-Châlons-Charleville (site de Châlons-en-Champagne - 51)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="timeline-date">Avril – Juin 2025</span>
-                                    <div class="timeline-content">
-                                    <h4>Stage – Avant-vente Cybersécurité</h4>
-                                    <p>HEXANET (site de Reims) – Réalisation d’une maquette de démonstration pour les solutions EDR/XDR et automatisation de la prise de rendez-vous entre les équipes commerciales et avant-vente lors des assignations des études avant-vente.</p>
-                                    </div>
-                                </li>
-                                <!-- <li>
-                                    <span class="timeline-date">2025 – 2026</span>
-                                    <div class="timeline-content">
-                                    <h4>Alternance (recherchée)</h4>
-                                    <p>3<sup>e</sup> année de BUT en alternance dans le domaine de la cybersécurité.</p>
-                                    </div>
-                                </li> -->
-                            </ul>
-                        </div>                          
-                    </div>
 
-                    <div class="projets" id="Projets">            
-                        <h2>Mes Projets</h2>
-                        <p>Voici quelques-uns des projets que j'ai réalisés dans le cadre de ma formation :</p>
-                        <div class="navbar_projets">
-                            <ul>
-                              <li><h3 class="selected" onclick="change_projet('professionnelles')">Professionnels</h3></li>
-                              <li><h3 onclick="change_projet('scolaires')">Scolaires</h3></li>    
-                              <li><h3 onclick="change_projet('personnels')">Personnels</h3></li>
-                              <!-- <li><h3 onclick="change_projet('hobby')">Hobby</h3></li> -->
-                            </ul>
-                        </div>
-                                
-                        <div class="projets-type projets_professionnelles">
-                            <div class="project-slider swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide project-slide">
-                                        <div class="project-img">
-                                            <img src="./static/img/caldera.png" alt="image caldera">
-                                        </div>
-                                        <div class="project-info">
-                                            <span class="project-date">Avril - Juin 2025</span>
-                                            <h3 class="project-title">Déploiement d'une maquette de démonstration des solution EDR et XDR d'HEXANET</h3>
-                                            <p class="project-text">
-                                            Lors de mon stage chez HEXANET, j’ai conçu et déployé une maquette de démonstration illustrant les fonctionnalités des solutions de cybersécurité EDR (Endpoint Detection and Response) et XDR (Extended Detection and Response). Cette maquette avait pour objectif de présenter, de manière concrète, la détection des menaces, la réponse aux incidents et la gestion des alertes auprès des clients.
-                                            <br><br>
-                                            Ce projet m’a permis d’approfondir des notions déjà abordées en cours, telles que la détection d’incidents, l’analyse des comportements malveillants, et la structure de la matrice MITRE ATT&CK, utilisée comme base pour simuler des scénarios d’attaque réalistes.
-                                            <br><br>
-                                            Sur le plan technique, j’ai appris à mettre en place l’outil Caldera (via Docker), à gérer la sécurisation HTTPS avec des certificats d’autorité, ainsi qu’à déployer un agent XDR sur un pare-feu Fortigate via un collecteur de logs.
-                                            </p>
-                                            <!-- <a href="#" class="project-btn">Voir plus</a> -->
-                                        </div>
-                                    </div>
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav-logo"><span class="dot"></span>Jocelin LAURET</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#profil">Profil</a>
+      <a href="#projets">Projets</a>
+      <a href="#sport">Sport</a>
+      <a href="#contact">Contact</a>
+      <a href="static/pdf/CV.pdf" class="nav-cta" target="_blank" rel="noopener">Mon CV</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
 
-                                    <div class="swiper-slide project-slide">
-                                        <div class="project-img">
-                                            <img src="./static/img/Microsoft_Power_Automate.jpg" alt="image power automate">
-                                        </div>
-                                        <div class="project-info">
-                                            <span class="project-date">Avril - Juin 2025</span>
-                                            <h3 class="project-title">Automatisation de prise de RDV entre commercial et avant-vente lors d'une assignation d'EAV</h3>
-                                            <p class="project-text">
-                                            Ce projet visait à fluidifier le processus de prise de rendez-vous entre les équipes commerciales et techniques d’HEXANET. J’ai développé un outil d’automatisation qui s’intègre avec les outils internes (type CRM/ERP) et les calendriers professionnels. Lorsqu’un commercial assigne un dossier à un ingénieur avant-vente, un créneau de rendez-vous est automatiquement proposé en fonction des disponibilités croisées, réduisant ainsi les délais de réponse et améliorant l’efficacité opérationnelle.
-                                            </p>
-                                            <!-- <a href="#" class="project-btn">Voir plus</a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-pagination"></div>
-                            </div>
-                        </div>
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="top">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <span class="hero-badge reveal in"><span class="pulse"></span> En alternance chez Axians C&amp;S · Master Réseaux &amp; Télécoms</span>
+      <h1 class="reveal in">Jocelin <span class="accent">LAURET</span></h1>
+      <p class="hero-role reveal in d1">Étudiant en Master 1 Réseaux &amp; Télécoms — parcours Administration &amp; Sécurité des Réseaux, en alternance</p>
+      <p class="hero-sub reveal in d2">Passionné par la sécurité des systèmes d'information et les réseaux, je poursuis mon parcours en alternance pour mettre mes compétences au service de projets concrets.</p>
+      <div class="hero-actions reveal in d3">
+        <a href="static/pdf/CV.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Télécharger mon CV
+        </a>
+        <a href="#contact" class="btn btn-ghost">Me contacter</a>
+      </div>
+      <div class="hero-stats reveal in d4">
+        <div class="hero-stat"><b>Master R&amp;T</b><span>Admin. &amp; Sécurité Réseaux</span></div>
+        <div class="hero-stat"><b>Alternance</b><span>Axians C&amp;S</span></div>
+        <div class="hero-stat"><b>Équipe de France</b><span>VTT d'orientation</span></div>
+      </div>
+    </div>
+    <a href="#profil" class="hero-scroll" aria-label="Défiler">
+      <span class="mouse"><span class="wheel"></span></span>
+      Découvrir
+    </a>
+  </section>
 
-                        <div class="projets-type projets_scolaires">
-                            <div class="project-slider swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide project-slide">
-                                        <div class="project-img">
-                                            <img src="./static/img/metasploit.png" alt="image metasploit">
-                                        </div>
-                                        <div class="project-info">
-                                            <span class="project-date">Decembre 2024</span>
-                                            <h3 class="project-title">SAE - Pentest</h3>
-                                            <p class="project-text">
-                                            Dans le cadre de ce projet, une maquette réseau préconfigurée m’a été fournie dans le but d’y identifier et d’exploiter un maximum de failles de sécurité. L’attaque débutait par un site web dynamique accessible via le chemin /developper, sur lequel j’ai mené une attaque par force brute avec Hydra. J’ai ensuite exploité une vulnérabilité Log4j pour obtenir un reverse shell. Une fois un accès initial obtenu, j’ai mis en place un mécanisme de persistance via Metasploit, puis réalisé un pivot réseau vers une interface pfSense exposée, accessible depuis le WAN. En progressant, j’ai pu exploiter une faille SMB sur un contrôleur de domaine Active Directory, ce qui m’a permis de récupérer les hachages et de modifier le mot de passe administrateur. L’attaque s’est conclue par un accès à distance en RDP sur une machine du réseau.
-                                            </p>
-                                            <a href="#" class="project-btn">Voir plus</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide project-slide">
-                                        <div class="project-img">
-                                            <img src="./static/img/golang.svg" alt="image golang">
-                                            <img src="./static/img/python.svg" alt="image python">
-                                            <img src="./static/img/html.svg" alt="image html">
-                                            <img src="./static/img/css.svg" alt="image css">
-                                        </div>
-                                        <div class="project-info">
-                                            <span class="project-date">Decembre 2024</span>
-                                            <h3 class="project-title">SAE - Déploiement d'applications communicantes</h3>
-                                            <p class="project-text">
-                                            Projet de fin du premier semestre de ma deuxième année de BUT Réseaux et Télécommunications, ce travail avait pour objectif de développer une application complète de gestion d’emplois du temps basée sur les données fournies par Celcat. Le projet consistait à extraire les données au format XML, les convertir en JSON, puis les stocker dans une base de données MongoDB. Une API développée en Go permettait de requêter ces données de manière sécurisée via SSL/TLS. Enfin, une interface web construite avec Flask offrait une visualisation claire des emplois du temps par salle, incluant les cours en temps réel et des fonctionnalités absentes de l’application Celcat d’origine.
-                                            </p>
-                                            <a href="#" class="project-btn">Voir plus</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide project-slide">
-                                        <div class="project-img">
-                                            <img src="./static/img/python.svg" alt="image python">
-                                        </div>
-                                        <div class="project-info">
-                                            <span class="project-date">Decembre 2023</span>
-                                            <h3 class="project-title">SAE - Trame ICMP en Python</h3>
-                                            <p class="project-text">
-                                            Projet de fin de semestre 1 de ma première année de BUT en Réseaux et Télécommunications. L'objectif était de recréer une trame ICMP en Python et de tester la fonctionnalité de ping. Ce projet m'a permis d'apprendre à utiliser les sockets réseau en Python et de mieux comprendre la structure de l'en-tête ICMP.
-                                            </p>
-                                            <a href="#" class="project-btn">Voir plus</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide project-slide">
-                                        <div class="project-img">
-                                            <img src="./static/img/arduino.svg" alt="image arduino">
-                                            <img src="./static/img/python.svg" alt="image python">
-                                        </div>
-                                        <div class="project-info">
-                                            <span class="project-date">Mars - Juin 2022</span>
-                                            <h3 class="project-title">Projet de Tête de Robot Humanoïde</h3>
-                                            <p class="project-text">
-                                            Projet de terminale réalisé en équipe avec mes camarades de classe, où nous avons travaillé sur la conception d'une tête de robot humanoïde. J'ai utilisé Arduino pour programmer les mouvements de la tête à l'aide de servomoteurs. En parallèle, j'ai employé Python pour implémenter la reconnaissance vocale et la synthèse de la parole. Nous avons également exploré le machine learning afin de permettre à BOBBY, notre robot, de lire.
-                                            </p>
-                                            <a href="#" class="project-btn">Voir plus</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-pagination"></div>
-                            </div>
-                        </div>
-
-
-                        <div class="projets-type projets_personnels">
-                            <div class="project-slider swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide project-slide">
-                                        <div class="project-img">
-                                            <img src="./static/img/html.svg" alt="image html">
-                                            <img src="./static/img/css.svg" alt="image css">
-                                            <img src="./static/img/javascript.svg" alt="image javascript">
-                                        </div>
-                                        <div class="project-info">
-                                            <span class="project-date">2024</span>
-                                            <h3 class="project-title">Portfolio</h3>
-                                            <p class="project-text">
-                                            Projet pour présenter mes compétences et mes réalisations. J'ai utilisé HTML, CSS et JavaScript pour créer ce site web.
-                                            </p>
-                                            <a href="#" class="project-btn">Voir plus</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide project-slide">
-                                        <div class="project-img">
-                                            <img src="./static/img/html.svg" alt="image html">
-                                            <img src="./static/img/css.svg" alt="image css">    
-                                            <img src="./static/img/javascript.svg" alt="image javascript">
-                                        </div>
-                                        <div class="project-info">
-                                            <span class="project-date">En cours</span>
-                                            <h3 class="project-title">Analyse de mes données sportives</h3>
-                                            <p class="project-text">
-                                            Dans le cadre de ce projet, j'ai exploité l'API de Strava pour collecter mes données, puis je les ai utilisées avec Flask pour effectuer mes analyses.
-                                            </p>
-                                            <a href="#" class="project-btn">Voir plus</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-pagination"></div>
-                            </div>
-                        </div>
-
-                    </div> 
-
-                    <div class="sport" id="Sport">
-                        <h2>Sport</h2>
-                        <p>
-                            En parallèle de mes études, je pratique régulièrement le sport de haut niveau. Cette discipline me permet non seulement de rester en forme, mais aussi de développer des qualités essentielles telles que la rigueur, la gestion du stress et l’esprit d’équipe.
-                        </p>
-                        <div class="sport-container">
-                            <div class="sport-wrapper">
-                              <div class="slider-item sport-slide">
-                                <div class="slider-image-wrapper">
-                                  <img class="slider-image" src="static/img/pologne1.jpg" alt="SliderImg">
-                                </div>
-                                <div class="slider-item-content">
-                                  <h1>Championnats d'Europe 2024 – Pologne</h1>
-                                  <p>
-                                    Cette première compétition internationale de la saison n’a pas répondu à mes attentes. Malgré une bonne préparation, mes performances individuelles ont été en dessous de mes objectifs initiaux.
-                                  </p>
-                                    <li>Résultats :  
-                                      <ul>Sprint : 24<sup>ème</sup></ul>
-                                      <ul>Longue distance : 11<sup>ème</sup></ul>
-                                      <ul>Moyenne distance : 10<sup>ème</sup></ul>
-                                      <ul>Relais : 1<sup>er</sup></ul>
-                                    </li>
-                                  <p>
-                                    Ce championnat m’a toutefois permis d’identifier mes axes de progression. J’ai ensuite réorienté mon entraînement pour renforcer ces points faibles en vue des prochaines compétitions.
-                                  </p>
-                                </div>
-                              </div>
-                              <div class="slider-item sport-slide">
-                                <div class="slider-image-wrapper">
-                                  <img class="slider-image" src="static/img/lettonie1.jpg" alt="SliderImg">
-                                </div>
-                                <div class="slider-item-content">
-                                  <h1>Coupe du monde 2024 – Lettonie</h1>
-                                  <p>
-                                    J’ai participé à la coupe du monde dans la catégorie élite, face à un niveau de concurrence particulièrement élevé. Malgré une forme physique moyenne, j’ai su tirer parti de mon expérience pour livrer des prestations solides.
-                                  </p>
-                                    <li>Résultats :
-                                      <ul>Sprint : 37<sup>ème</sup></ul>
-                                      <ul>Longue distance : 39<sup>ème</sup></ul>
-                                      <ul>Relais : 26<sup>ème</sup></ul>
-                                    </li>
-                                  <p>
-                                    Ce challenge m’a redonné confiance et a confirmé ma progression. Il m’a également permis de mieux me préparer pour le dernier grand objectif de la saison : les Championnats du Monde.
-                                  </p>
-                                </div>
-                              </div>
-                              <div class="slider-item sport-slide">
-                                <div class="slider-image-wrapper">
-                                  <img class="slider-image" src="static/img/bulgarie1.jpg" alt="SliderImg">
-                                </div>
-                                <div class="slider-item-content">
-                                  <h1>Championnats du Monde 2024 – Bulgarie</h1>
-                                  <p>
-                                    Abordés avec sérénité, ces championnats ont été une réussite. Sans pression inutile, j’ai pu exprimer pleinement mon potentiel, aussi bien sur le plan individuel qu’en relais.
-                                  </p>
-                                    <li>Résultats :
-                                      <ul>Sprint : 6<sup>ème</sup></ul>
-                                      <ul>Mass start : 4<sup>ème</sup></ul>
-                                      <ul>Moyenne distance : 5<sup>ème</sup></ul>
-                                      <ul>Longue distance : 7<sup>ème</sup></ul>
-                                      <ul>Relais : 1<sup>er</sup></ul>
-                                    </li>
-                                  <p>
-                                    Ces résultats confirment ma progression constante. Ils renforcent ma motivation pour continuer à m'entraîner sérieusement et viser encore plus haut lors des saisons à venir.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          <div class="sport-pagination"></div>       
-                        </div>
-                    </div>
-                </div>
-            </section>
-      
-            <footer>
-                <div class="footer-content" id="Contact">
-                    <h2>Contact</h2>
-                    <p>N’hésitez pas à me contacter via ce formulaire :</p>
-                    <!-- <form action="https://formspree.io/f/xovwzpgz" method="POST" class="footer-form">
-                        <div class="form-group">
-                            <label for="email">Votre email :</label>
-                            <input type="email" name="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Votre message :</label>
-                            <textarea name="message" id="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-footer">Envoyer</button>
-                    </form> -->
-                    <form id="contact-form" class="footer-form">
-                        <div class="footer-form-row">
-                            <div class="form-group">
-                                <label for="name">Votre nom :</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Votre email :</label>
-                                <input type="email" name="email" id="email" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Votre message :</label>
-                            <textarea name="message" id="message" rows="5" required></textarea>
-                        </div>
-                        <div class="g-recaptcha" data-sitekey="6Lf5b4krAAAAABpYwa4xW2st1WlJ39exP16xSpoU"></div><br/>
-                        <button type="submit" class="btn-footer">Envoyer</button>
-                    </form> 
-                   <div class="social">
-                    <a href="https://github.com/Jocelin2?tab=repositories">
-                      <img src="static/img/github.svg" alt="icon github" style="filter: brightness(0) invert(1);">
-                        <h1>github</h1>
-                    </a>
-                    <a href="https://www.linkedin.com/in/jocelin-lauret">
-                      <img src="static/img/linkedin.svg" alt="icon linkedin">
-                        <h1>linkedin</h1>
-                    </a>  
-                  </div>
-                </div>
-            </footer>
-          </div>
+  <!-- ===================== PROFIL ===================== -->
+  <section class="section-pad" id="profil">
+    <div class="container about-grid">
+      <div class="about-text">
+        <span class="eyebrow reveal">À propos</span>
+        <h2 class="section-title reveal">Un profil <span class="gradient-text">technique &amp; sportif</span></h2>
+        <p class="lead reveal">Je suis Jocelin LAURET, étudiant en Master 1 Réseaux &amp; Télécoms, parcours Administration &amp; Sécurité des Réseaux à Reims, que je réalise en alternance chez Axians C&amp;S.</p>
+        <p class="reveal d1">Passionné par les technologies de l'information et la sécurité des systèmes, je mets en pratique mes compétences au quotidien dans le cadre de mon alternance et contribue à des projets concrets. La discipline acquise dans le sport de haut niveau — rigueur, gestion du stress et esprit d'équipe — guide aussi ma façon de travailler.</p>
+        <div class="chip-group reveal d2">
+          <span class="chip"><img src="static/img/python.svg" alt="">Python</span>
+          <span class="chip"><img src="static/img/golang.svg" alt="">Go</span>
+          <span class="chip"><img src="static/img/html.svg" alt="">HTML</span>
+          <span class="chip"><img src="static/img/css.svg" alt="">CSS</span>
+          <span class="chip"><img src="static/img/javascript.svg" alt="">JavaScript</span>
+          <span class="chip"><img src="static/img/arduino.svg" alt="">Arduino</span>
+          <span class="chip">Pentest</span>
+          <span class="chip">EDR / XDR</span>
+          <span class="chip">MITRE ATT&amp;CK</span>
         </div>
       </div>
+
+      <div class="about-timeline reveal d1">
+        <ul class="timeline">
+          <li class="tl-item">
+            <span class="tl-date">2020 – 2023</span>
+            <h4>Baccalauréat — Spécialités Mathématiques &amp; NSI</h4>
+            <p>Lycée La Fayette, Champagne-sur-Seine (77)</p>
+          </li>
+          <li class="tl-item">
+            <span class="tl-date">2023 – 2026</span>
+            <h4>BUT Réseaux &amp; Télécoms</h4>
+            <p>IUT de Reims-Châlons-Charleville (site de Châlons-en-Champagne, 51). Troisième année réalisée en alternance.</p>
+          </li>
+          <li class="tl-item">
+            <span class="tl-date">Avril – Juin 2025</span>
+            <h4>Stage — Avant-vente Cybersécurité</h4>
+            <p>HEXANET (Reims) — Maquette de démonstration EDR/XDR et automatisation de la prise de rendez-vous entre équipes commerciales et avant-vente lors des assignations d'études avant-vente.</p>
+          </li>
+          <li class="tl-item">
+            <span class="tl-date">Depuis septembre 2025</span>
+            <h4>Alternance — Intégration réseau · Axians C&amp;S</h4>
+            <p>Axians C&amp;S (Nanterre, 92). Alternance en intégration réseau débutée en 3<sup>e</sup> année de BUT et poursuivie durant mon Master.</p>
+          </li>
+          <li class="tl-item">
+            <span class="tl-date">Depuis septembre 2026</span>
+            <h4>Master 1 Réseaux &amp; Télécoms — Administration &amp; Sécurité des Réseaux</h4>
+            <p>Université de Reims (URCA), en alternance chez Axians C&amp;S. Enseignements avancés en réseaux et sécurité alliés à des missions concrètes en entreprise.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJETS ===================== -->
+  <section class="section-pad projects" id="projets">
+    <div class="container">
+      <span class="eyebrow reveal">Réalisations</span>
+      <h2 class="section-title reveal">Mes projets</h2>
+      <p class="section-intro reveal">Quelques projets réalisés dans le cadre de ma formation, de mon stage et sur mon temps personnel.</p>
+
+      <div class="tabs reveal d1" role="tablist">
+        <button class="tab active" data-panel="pro">Professionnels</button>
+        <button class="tab" data-panel="scolaires">Scolaires</button>
+        <button class="tab" data-panel="perso">Personnels</button>
+      </div>
+
+      <!-- PRO -->
+      <div class="project-panel active" data-panel="pro">
+        <article class="pcard reveal">
+          <div class="pcard-media">
+            <svg class="pcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="14" rx="3"/><path d="M4 11h16"/><circle cx="8.5" cy="14" r="1"/><circle cx="15.5" cy="14" r="1"/><path d="M8 17l-2 4M16 17l2 4"/><path d="M9 7h6"/></svg>
+          </div>
+          <div class="pcard-body">
+            <span class="pcard-date">Depuis 2025 · Axians C&amp;S</span>
+            <h3>Intégration d'un réseau sur une ligne de métro</h3>
+            <div class="pcard-text">
+              <p class="pcard-excerpt">Projet principal de mon alternance chez Axians C&amp;S : intégration et déploiement de l'infrastructure réseau d'une ligne de métro, de la conception à la mise en service.</p>
+              <div class="pcard-full">
+                <p>Projet principal de mon alternance chez Axians C&amp;S (Nanterre) : intégration et déploiement de l'infrastructure réseau d'une ligne de métro, de la conception à la mise en service.</p>
+                <p style="margin-top:12px">Ce projet d'envergure me permet de travailler sur des équipements et architectures réseau à grande échelle, dans un environnement critique où fiabilité, sécurité et disponibilité sont essentielles.</p>
+              </div>
+            </div>
+            <div class="pcard-tags"><span>Intégration réseau</span><span>Infrastructure</span><span>Environnement critique</span></div>
+            <button class="pcard-more">Lire la suite <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          </div>
+        </article>
+
+        <article class="pcard reveal d1">
+          <div class="pcard-media"><img src="static/img/caldera.png" alt="Caldera"></div>
+          <div class="pcard-body">
+            <span class="pcard-date">Avril – Juin 2025</span>
+            <h3>Maquette de démonstration EDR &amp; XDR — HEXANET</h3>
+            <div class="pcard-text">
+              <p class="pcard-excerpt">Conception et déploiement d'une maquette illustrant les fonctionnalités des solutions EDR et XDR : détection des menaces, réponse aux incidents et gestion des alertes auprès des clients.</p>
+              <div class="pcard-full">
+                <p>Conception et déploiement d'une maquette illustrant les fonctionnalités des solutions EDR (Endpoint Detection and Response) et XDR (Extended Detection and Response) : détection des menaces, réponse aux incidents et gestion des alertes auprès des clients.</p>
+                <p style="margin-top:12px">Ce projet m'a permis d'approfondir la détection d'incidents, l'analyse des comportements malveillants et la matrice MITRE ATT&amp;CK, utilisée pour simuler des scénarios d'attaque réalistes. Techniquement : mise en place de Caldera (via Docker), sécurisation HTTPS avec certificats d'autorité, et déploiement d'un agent XDR sur un pare-feu Fortigate via un collecteur de logs.</p>
+              </div>
+            </div>
+            <div class="pcard-tags"><span>Caldera</span><span>Docker</span><span>MITRE ATT&amp;CK</span><span>Fortigate</span></div>
+            <button class="pcard-more">Lire la suite <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          </div>
+        </article>
+
+        <article class="pcard reveal d1">
+          <div class="pcard-media"><img src="static/img/Microsoft_Power_Automate.jpg" alt="Power Automate"></div>
+          <div class="pcard-body">
+            <span class="pcard-date">Avril – Juin 2025</span>
+            <h3>Automatisation de prise de RDV commercial ↔ avant-vente</h3>
+            <div class="pcard-text">
+              <p class="pcard-excerpt">Outil d'automatisation fluidifiant la prise de rendez-vous entre équipes commerciales et techniques d'HEXANET, intégré aux outils internes et calendriers professionnels.</p>
+              <div class="pcard-full">
+                <p>Développement d'un outil d'automatisation fluidifiant la prise de rendez-vous entre les équipes commerciales et techniques d'HEXANET, intégré aux outils internes (CRM/ERP) et aux calendriers professionnels.</p>
+                <p style="margin-top:12px">Lorsqu'un commercial assigne un dossier à un ingénieur avant-vente, un créneau est automatiquement proposé selon les disponibilités croisées — réduisant les délais de réponse et améliorant l'efficacité opérationnelle.</p>
+              </div>
+            </div>
+            <div class="pcard-tags"><span>Power Automate</span><span>Automatisation</span><span>CRM/ERP</span></div>
+            <button class="pcard-more">Lire la suite <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          </div>
+        </article>
+      </div>
+
+      <!-- SCOLAIRES -->
+      <div class="project-panel" data-panel="scolaires">
+        <article class="pcard reveal">
+          <div class="pcard-media"><img src="static/img/metasploit.png" alt="Metasploit"></div>
+          <div class="pcard-body">
+            <span class="pcard-date">Décembre 2024</span>
+            <h3>SAE — Pentest complet</h3>
+            <div class="pcard-text">
+              <p class="pcard-excerpt">Identification et exploitation d'un maximum de failles sur une maquette réseau préconfigurée : brute force, Log4j, persistance, pivot réseau et compromission d'un Active Directory.</p>
+              <div class="pcard-full">
+                <p>À partir d'une maquette réseau préconfigurée, l'objectif était d'identifier et d'exploiter un maximum de failles. L'attaque débutait par un site web dynamique (/developper) avec une attaque par force brute via Hydra, puis l'exploitation d'une vulnérabilité Log4j pour obtenir un reverse shell.</p>
+                <p style="margin-top:12px">J'ai ensuite mis en place une persistance via Metasploit, réalisé un pivot réseau vers une interface pfSense exposée sur le WAN, exploité une faille SMB sur un contrôleur de domaine Active Directory (récupération de hachages, modification du mot de passe administrateur), avant de conclure par un accès distant en RDP.</p>
+              </div>
+            </div>
+            <div class="pcard-tags"><span>Metasploit</span><span>Hydra</span><span>Log4j</span><span>Active Directory</span><span>pfSense</span></div>
+            <button class="pcard-more">Lire la suite <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          </div>
+        </article>
+
+        <article class="pcard reveal d1">
+          <div class="pcard-media">
+            <img src="static/img/golang.svg" alt="Go"><img src="static/img/python.svg" alt="Python">
+          </div>
+          <div class="pcard-body">
+            <span class="pcard-date">Décembre 2024</span>
+            <h3>SAE — Déploiement d'applications communicantes</h3>
+            <div class="pcard-text">
+              <p class="pcard-excerpt">Application complète de gestion d'emplois du temps basée sur les données Celcat : extraction XML → JSON, stockage MongoDB, API Go sécurisée en SSL/TLS et interface web Flask.</p>
+              <div class="pcard-full">
+                <p>Projet de fin de semestre de 2<sup>e</sup> année : développer une application complète de gestion d'emplois du temps à partir des données Celcat. Extraction des données XML, conversion en JSON, puis stockage dans une base MongoDB.</p>
+                <p style="margin-top:12px">Une API développée en Go permettait de requêter les données de façon sécurisée via SSL/TLS. Une interface web construite avec Flask offrait une visualisation claire des emplois du temps par salle, avec les cours en temps réel et des fonctionnalités absentes de l'application Celcat d'origine.</p>
+              </div>
+            </div>
+            <div class="pcard-tags"><span>Go</span><span>Flask</span><span>MongoDB</span><span>SSL/TLS</span></div>
+            <button class="pcard-more">Lire la suite <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          </div>
+        </article>
+
+        <article class="pcard reveal d2">
+          <div class="pcard-media"><img src="static/img/python.svg" alt="Python"></div>
+          <div class="pcard-body">
+            <span class="pcard-date">Décembre 2023</span>
+            <h3>SAE — Trame ICMP en Python</h3>
+            <div class="pcard-text">
+              <p class="pcard-excerpt">Recréation d'une trame ICMP en Python et test de la fonctionnalité de ping — sockets réseau et structure de l'en-tête ICMP.</p>
+              <div class="pcard-full">
+                <p>Projet de fin de semestre 1 de 1<sup>re</sup> année. L'objectif était de recréer une trame ICMP en Python et de tester la fonctionnalité de ping. Ce projet m'a permis d'apprendre à utiliser les sockets réseau en Python et de mieux comprendre la structure de l'en-tête ICMP.</p>
+              </div>
+            </div>
+            <div class="pcard-tags"><span>Python</span><span>Sockets</span><span>ICMP</span></div>
+            <button class="pcard-more">Lire la suite <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          </div>
+        </article>
+
+        <article class="pcard reveal d3">
+          <div class="pcard-media">
+            <img src="static/img/arduino.svg" alt="Arduino"><img src="static/img/python.svg" alt="Python">
+          </div>
+          <div class="pcard-body">
+            <span class="pcard-date">Mars – Juin 2022</span>
+            <h3>Tête de robot humanoïde « BOBBY »</h3>
+            <div class="pcard-text">
+              <p class="pcard-excerpt">Projet de terminale en équipe : conception d'une tête de robot humanoïde, mouvements via Arduino/servomoteurs, reconnaissance et synthèse vocale en Python.</p>
+              <div class="pcard-full">
+                <p>Projet de terminale réalisé en équipe. Utilisation d'Arduino pour programmer les mouvements de la tête via des servomoteurs, et de Python pour la reconnaissance vocale et la synthèse de la parole. Nous avons également exploré le machine learning pour permettre à BOBBY, notre robot, de lire.</p>
+              </div>
+            </div>
+            <div class="pcard-tags"><span>Arduino</span><span>Python</span><span>Machine Learning</span></div>
+            <button class="pcard-more">Lire la suite <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          </div>
+        </article>
+      </div>
+
+      <!-- PERSO -->
+      <div class="project-panel" data-panel="perso">
+        <article class="pcard reveal">
+          <div class="pcard-media">
+            <img src="static/img/html.svg" alt="HTML"><img src="static/img/css.svg" alt="CSS"><img src="static/img/javascript.svg" alt="JS">
+          </div>
+          <div class="pcard-body">
+            <span class="pcard-date">2024</span>
+            <h3>Ce portfolio</h3>
+            <div class="pcard-text">
+              <p class="pcard-excerpt">Site web personnel pour présenter mes compétences et réalisations, développé en HTML, CSS et JavaScript.</p>
+              <div class="pcard-full">
+                <p>Site web personnel conçu pour présenter mes compétences et mes réalisations. Développé en HTML, CSS et JavaScript, hébergé sur GitHub Pages avec un nom de domaine personnalisé.</p>
+              </div>
+            </div>
+            <div class="pcard-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <button class="pcard-more">Lire la suite <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          </div>
+        </article>
+
+        <article class="pcard reveal d1">
+          <div class="pcard-media">
+            <img src="static/img/strava.png" alt="Strava"><img src="static/img/python.svg" alt="Python">
+          </div>
+          <div class="pcard-body">
+            <span class="pcard-date">En cours</span>
+            <h3>Analyse de mes données sportives</h3>
+            <div class="pcard-text">
+              <p class="pcard-excerpt">Exploitation de l'API Strava pour collecter mes données d'entraînement, puis analyse et visualisation avec Flask.</p>
+              <div class="pcard-full">
+                <p>Projet personnel en cours : exploitation de l'API de Strava pour collecter mes données d'entraînement, puis traitement et analyse avec Flask afin d'en tirer des visualisations et des indicateurs de progression.</p>
+              </div>
+            </div>
+            <div class="pcard-tags"><span>API Strava</span><span>Flask</span><span>Data</span></div>
+            <button class="pcard-more">Lire la suite <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SPORT ===================== -->
+  <section class="section-pad sport" id="sport">
+    <div class="container">
+      <div class="center" style="max-width:700px">
+        <span class="eyebrow reveal">Hors des écrans</span>
+        <h2 class="section-title reveal">Sport de haut niveau</h2>
+        <p class="section-intro reveal" style="margin-inline:auto">En parallèle de mes études, je pratique le VTT d'orientation au plus haut niveau avec l'équipe de France, en catégorie Junior puis désormais Élite / U23. Une discipline exigeante qui développe rigueur, gestion du stress et esprit d'équipe.</p>
+      </div>
+
+      <div class="sport-cards">
+
+        <!-- 2026 -->
+        <article class="scard reveal">
+          <div class="scard-img">
+            <img src="static/img/pt_2026.jpg" alt="Équipe de France — Portugal 2026">
+            <span class="head-cat">Élite / U23</span>
+            <span class="scard-flag">🇵🇹 2026 · Portugal</span>
+          </div>
+          <div class="scard-body">
+            <h3>Championnats d'Europe</h3>
+            <div class="scard-event">Première saison en catégorie Élite</div>
+            <div class="results">
+              <div class="result"><span class="r-name">Sprint</span><span class="r-rank">38<sup>e</sup></span></div>
+              <div class="result"><span class="r-name">Moyenne</span><span class="r-rank">15<sup>e</sup></span></div>
+              <div class="result"><span class="r-name">Mass start</span><span class="r-rank">17<sup>e</sup></span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="scard reveal d1">
+          <div class="scard-img">
+            <img src="static/img/hu_2026.jpg" alt="Équipe de France — Hongrie 2026">
+            <span class="head-cat">Élite / U23</span>
+            <span class="scard-flag">🇭🇺 2026 · Hongrie</span>
+          </div>
+          <div class="scard-body">
+            <h3>Coupe du monde &amp; Mondiaux U23</h3>
+            <div class="scard-event">4<sup>e</sup> mondial U23 en moyenne distance</div>
+            <div class="results">
+              <div class="result dual">
+                <span class="r-name">Sprint</span>
+                <span class="r-ranks">
+                  <span class="r-tag u23"><i>U23</i><b>13<sup>e</sup></b></span>
+                  <span class="r-tag"><i>Élite</i><b>40<sup>e</sup></b></span>
+                </span>
+              </div>
+              <div class="result dual">
+                <span class="r-name">Moyenne</span>
+                <span class="r-ranks">
+                  <span class="r-tag u23"><i>U23</i><b>4<sup>e</sup></b></span>
+                  <span class="r-tag"><i>Élite</i><b>23<sup>e</sup></b></span>
+                </span>
+              </div>
+              <div class="result dnf"><span class="r-name">Longue</span><span class="r-rank">erreur de poinçon</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2025 -->
+        <article class="scard reveal d2">
+          <div class="scard-img">
+            <img src="static/img/bg_2025.jpg" alt="Équipe de France — Bulgarie 2025">
+            <span class="head-cat">U23</span>
+            <span class="scard-flag">🇧🇬 2025 · Bulgarie</span>
+          </div>
+          <div class="scard-body">
+            <h3>Championnats du Monde U23</h3>
+            <div class="scard-event">6<sup>e</sup> mondial U23 en sprint</div>
+            <div class="results">
+              <div class="result dual">
+                <span class="r-name">Sprint</span>
+                <span class="r-ranks">
+                  <span class="r-tag u23"><i>U23</i><b>6<sup>e</sup></b></span>
+                  <span class="r-tag"><i>Élite</i><b>23<sup>e</sup></b></span>
+                </span>
+              </div>
+              <div class="result dual">
+                <span class="r-name">Longue</span>
+                <span class="r-ranks">
+                  <span class="r-tag u23"><i>U23</i><b>16<sup>e</sup></b></span>
+                  <span class="r-tag"><i>Élite</i><b>36<sup>e</sup></b></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="scard reveal">
+          <div class="scard-img">
+            <img src="static/img/pl_2025.jpg" alt="Équipe de France — Pologne 2025">
+            <span class="head-cat">Junior</span>
+            <span class="scard-flag">🇵🇱 2025 · Pologne</span>
+          </div>
+          <div class="scard-body">
+            <h3>Championnats du Monde Junior</h3>
+            <div class="scard-event">Titre mondial en relais 🥇</div>
+            <div class="results">
+              <div class="result"><span class="r-name">Sprint</span><span class="r-rank">10<sup>e</sup></span></div>
+              <div class="result"><span class="r-name">Moyenne</span><span class="r-rank">12<sup>e</sup></span></div>
+              <div class="result"><span class="r-name">Mass start</span><span class="r-rank">7<sup>e</sup></span></div>
+              <div class="result"><span class="r-name">Longue</span><span class="r-rank">4<sup>e</sup></span></div>
+              <div class="result gold"><span class="r-name">Relais</span><span class="r-rank">1<sup>er</sup></span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="scard reveal d1">
+          <div class="scard-img">
+            <img src="static/img/lt_2025.jpg" alt="Équipe de France — Lituanie 2025">
+            <span class="head-cat">Junior</span>
+            <span class="scard-flag">🇱🇹 2025 · Lituanie</span>
+          </div>
+          <div class="scard-body">
+            <h3>Championnats d'Europe Junior</h3>
+            <div class="scard-event">Titre en relais 🥇</div>
+            <div class="results">
+              <div class="result"><span class="r-name">Longue</span><span class="r-rank">4<sup>e</sup></span></div>
+              <div class="result"><span class="r-name">Moyenne</span><span class="r-rank">5<sup>e</sup></span></div>
+              <div class="result"><span class="r-name">Sprint</span><span class="r-rank">7<sup>e</sup></span></div>
+              <div class="result gold"><span class="r-name">Relais</span><span class="r-rank">1<sup>er</sup></span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2024 -->
+        <article class="scard reveal">
+          <div class="scard-img">
+            <img src="static/img/bulgarie1.jpg" alt="Équipe de France — Bulgarie 2024">
+            <span class="head-cat">Junior</span>
+            <span class="scard-flag">🇧🇬 2024 · Bulgarie</span>
+          </div>
+          <div class="scard-body">
+            <h3>Championnats du Monde Junior</h3>
+            <div class="scard-event">Titre en relais 🥇 · 4<sup>e</sup> en mass start</div>
+            <div class="results">
+              <div class="result"><span class="r-name">Sprint</span><span class="r-rank">6<sup>e</sup></span></div>
+              <div class="result"><span class="r-name">Mass start</span><span class="r-rank">4<sup>e</sup></span></div>
+              <div class="result"><span class="r-name">Moyenne</span><span class="r-rank">5<sup>e</sup></span></div>
+              <div class="result"><span class="r-name">Longue</span><span class="r-rank">7<sup>e</sup></span></div>
+              <div class="result gold"><span class="r-name">Relais</span><span class="r-rank">1<sup>er</sup></span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="scard reveal d1">
+          <div class="scard-img">
+            <img src="static/img/lettonie1.jpg" alt="Équipe de France — Lettonie 2024">
+            <span class="head-cat">U23 / Élite</span>
+            <span class="scard-flag">🇱🇻 2024 · Lettonie</span>
+          </div>
+          <div class="scard-body">
+            <h3>Coupe du monde</h3>
+            <div class="scard-event">Manche de Coupe du monde</div>
+            <div class="results">
+              <div class="result"><span class="r-name">Sprint</span><span class="r-rank">37<sup>e</sup></span></div>
+              <div class="result"><span class="r-name">Longue</span><span class="r-rank">39<sup>e</sup></span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="scard reveal d2">
+          <div class="scard-img">
+            <img src="static/img/pologne1.jpg" alt="Équipe de France — Pologne 2024">
+            <span class="head-cat">Junior</span>
+            <span class="scard-flag">🇵🇱 2024 · Pologne</span>
+          </div>
+          <div class="scard-body">
+            <h3>Championnats d'Europe Junior</h3>
+            <div class="scard-event">Titre en relais 🥇</div>
+            <div class="results">
+              <div class="result"><span class="r-name">Sprint</span><span class="r-rank">24<sup>e</sup></span></div>
+              <div class="result"><span class="r-name">Moyenne</span><span class="r-rank">10<sup>e</sup></span></div>
+              <div class="result"><span class="r-name">Longue</span><span class="r-rank">11<sup>e</sup></span></div>
+              <div class="result gold"><span class="r-name">Relais</span><span class="r-rank">1<sup>er</sup></span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section-pad contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-side">
+          <span class="eyebrow reveal">Contact</span>
+          <h2 class="section-title reveal">Travaillons <span class="gradient-text">ensemble</span></h2>
+          <p class="reveal d1">Une question, un projet ou simplement l'envie d'échanger ? N'hésitez pas à me contacter, je réponds rapidement.</p>
+          <div class="contact-methods reveal d2">
+            <a class="cm" href="https://www.linkedin.com/in/jocelin-lauret" target="_blank" rel="noopener">
+              <span class="cm-icon"><img src="static/img/linkedin.svg" alt="LinkedIn"></span>
+              <span><span class="cm-label">LinkedIn</span><br><span class="cm-value">jocelin-lauret</span></span>
+            </a>
+            <a class="cm" href="https://github.com/Jocelin2?tab=repositories" target="_blank" rel="noopener">
+              <span class="cm-icon"><img src="static/img/github.svg" alt="GitHub"></span>
+              <span><span class="cm-label">GitHub</span><br><span class="cm-value">Jocelin2</span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="form-card reveal d1">
+          <form id="contact-form">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Votre nom</label>
+                <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
+              </div>
+              <div class="field">
+                <label for="email">Votre email</label>
+                <input type="email" id="email" name="email" placeholder="jean@exemple.fr" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="message">Votre message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Bonjour Jocelin, ..." required></textarea>
+            </div>
+            <div class="g-recaptcha" data-sitekey="6Lf5b4krAAAAABpYwa4xW2st1WlJ39exP16xSpoU"></div>
+            <button type="submit" class="btn btn-submit">Envoyer le message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="foot-logo"><span class="dot"></span>Jocelin LAURET</div>
+      <nav>
+        <a href="#profil">Profil</a>
+        <a href="#projets">Projets</a>
+        <a href="#sport">Sport</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <small>© <span id="year"></span> Jocelin LAURET — Portfolio. Conçu avec passion.</small>
+    </div>
+  </footer>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="static/main.js"></script>
 </body>
-<!-- Mail -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-    (function() {
-      emailjs.init("vCwDMPJLBtg6MrbGY");
-    })();
-
-    // Gestionnaire de contact (EmailJS)
-
-    document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault(); // Empêche le rechargement de la page lors de la soumission du formulaire
-
-      const Button = document.querySelector('button[type="submit"]');
-      const Form = document.getElementById('contact-form');
-        
-      // change "envoyer" button to "envoi en cours" and add loader SVG
-      Button.textContent = 'Envoi en cours...';
-      
-
-      // Envoie l'email avec EmailJS
-      const recaptchaResponse = grecaptcha.getResponse();
-      if (!recaptchaResponse) {
-          Button.style.backgroundColor = '#f44336';
-          Button.textContent = 'Veuillez compléter le reCAPTCHA';
-          setTimeout(function() {
-              Button.style.backgroundColor = '';
-              Button.textContent = 'Envoyer';
-          }, 4000);
-          return;
-      }
-
-      emailjs.send("service_thfi504", "template_z0mh4i8", {
-          from_name: document.getElementById('name').value,
-          from_email: document.getElementById('email').value,
-          message: document.getElementById('message').value,
-          "g-recaptcha-response": recaptchaResponse
-      }).then(function(response) {
-          // affiche le message de succès pendant 4 secondes
-          setTimeout(function() {
-              Button.style.backgroundColor = '#4caf50';
-              Button.textContent = 'Message envoyé avec succès'; 
-              // Réinitialise le formulaire après 4 secondes supplémentaires
-              setTimeout(function() {
-                  Button.style.backgroundColor = '';
-                  Button.textContent = 'Envoyer';
-                  Form.reset();
-              }, 4000);
-          }, 4000);
-      }, function(error) {
-          // affiche le message d'erreur pendant 4 secondes
-          setTimeout(function() {
-              Button.style.backgroundColor = '#f44336';
-              Button.textContent = 'Erreur lors de l\'envoi, veuillez réessayer'; 
-              // Réinitialise le formulaire après 4 secondes supplémentaires
-              setTimeout(function() {
-                  Button.style.backgroundColor = '';
-                  Button.textContent = 'Envoyer';
-                  Form.reset();
-              }, 4000);
-          }, 4000);
-          console.error('Erreur lors de l\'envoi:', error); // Log l'erreur dans la console
-        });
-      });
-    });
-</script>
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script>
-    // Initialisation du Swiper pour les projets
-
-    var swiper = new Swiper(".swiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        effect: "fade",
-        loop: true,
-        mousewheel: {
-            invert: false
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true
-        },
-    });
-
-    // Initialisation du Swiper pour la section Sport
-
-    // Initialisation du Swiper pour la section Sport
-    var sportSwiper = new Swiper('.sport-container', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        effect: "fade",
-        loop: true,
-        // speed: 300,
-        mousewheel: {
-            invert: false,
-        },
-        pagination: {
-            el: '.sport-pagination',
-            clickable: true,
-            // dynamicBullets: true
-        },
-        // Navigation arrows
-        // navigation: {
-        //     nextEl: '.swiper-button-next',
-        //     prevEl: '.swiper-button-prev',
-        // },
-
-        // renomage les classes pour éviter les conflits
-        
-        wrapperClass: 'sport-wrapper',
-        slideClass: 'sport-slide',
-        slideActiveClass: 'swiper-slide-active',
-
-    });
-</script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    function scrollFooter(scrollY, heightFooter)
-    {
-        // console.log(scrollY);
-        // console.log(heightFooter);
-
-        if(scrollY >= heightFooter)
-        {
-            $('footer').css({
-                'bottom' : '0px'
-            });
-        }
-        else
-        {
-            $('footer').css({
-                'bottom' : '-' + heightFooter + 'px'
-            });
-        }
-    }
-
-    $(window).on('load', function() {
-        var windowHeight        = $(window).height(),
-            footerHeight        = $('footer').height(),
-            heightDocument      = (windowHeight) + ($('.content').height()) + ($('footer').height()) + 20;
-
-        // Definindo o tamanho do elemento pra animar
-        $('#scroll-animate, #scroll-animate-main').css({
-            'height' :  heightDocument + 'px'
-        });
-
-        // Definindo o tamanho dos elementos header e conteúdo
-        $('header').css({
-            'height' : windowHeight + 'px',
-            // 'line-height' : windowHeight + 'px'
-        });
-
-        $('.wrapper-parallax').css({
-            'margin-top' : windowHeight + 'px'
-        });
-
-        scrollFooter(window.scrollY, footerHeight);
-
-        // ao dar rolagem
-        window.onscroll = function(){
-            var scroll = window.scrollY;
-
-            $('#scroll-animate-main').css({
-                'top' : '-' + scroll + 'px'
-            });
-            
-            $('header').css({
-                'background-position-y' : 50 - (scroll * 100 / heightDocument) + '%'
-            });
-
-            scrollFooter(scroll, footerHeight);
-        }
-    });
-
-    // Fonction pour basculer le menu mobile
-    function toggleMenu() {
-        const navLinks = document.querySelector('.nav-links');
-        navLinks.classList.toggle('active');
-    }
-
-    // Changement de la couleur du navbar au scroll
-    window.addEventListener('scroll', function() {
-        var nav = document.querySelector('nav');
-        var navlinks = document.querySelectorAll('nav a');
-
-        if (window.scrollY >= 690) {
-            nav.style.backgroundColor = 'white';
-            nav.style.color = '#3f86ed';
-            navlinks.forEach(function(link) {
-                link.style.color = '#3f86ed';
-            });
-        } else {
-            nav.style.backgroundColor = 'transparent';
-            nav.style.color = 'white';
-            navlinks.forEach(function(link) {
-                link.style.color = 'white';
-            });
-        }
-    });
-
-    // Fonction pour changer de projet dans la section Projets
-    function change_projet(name) {
-        var projets = document.querySelectorAll('.projets-type');
-        projets.forEach(function(projet) {
-            if (projet.classList.contains('projets_' + name)) {
-                projet.style.display = 'block';
-                projet.querySelector('.swiper').swiper.update(); // Met à jour le swiper pour le nouveau projet
-            } else {
-                projet.style.display = 'none';
-            }
-        });   
-    }
-    document.querySelectorAll('.navbar_projets h3').forEach(item => {
-      item.addEventListener('click', () => {
-        // Supprime la classe 'selected' de tous les onglets
-        document.querySelectorAll('.navbar_projets h3').forEach(h3 => {
-          h3.classList.remove('selected');
-        });
-
-        // Ajoute la classe 'selected' à l'onglet cliqué
-        item.classList.add('selected');
-      });
-    });
-
-    //lance change_projet pour afficher les projets professionnels lors de l'ouverture de la page
-    document.addEventListener('DOMContentLoaded', function() {
-        change_projet('professionnelles');
-    });
-
-    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').slice(1);
-        const targetEl = document.getElementById(targetId);
-        if (targetEl) {
-            const headerOffset = 80; // pour éviter d'être caché sous la navbar
-            const targetPosition = targetEl.getBoundingClientRect().top + window.scrollY;
-            const scrollTo = targetPosition;
-
-            if (targetId === "Contact") {
-            window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: "smooth"
-            });
-            } else {
-            window.scrollTo({
-                top: targetEl.getBoundingClientRect().top + window.scrollY,
-                behavior: "smooth"
-            });
-            }
-        }
-    });
-    });
-</script>
 </html>
